@@ -6,8 +6,9 @@
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
 // mini test for distribution builds
+const { run_test } = require('../test_helpers/run_test');
 
-const mini_test = () =>
+export const mini_test = () =>
   run_test([
     // static spherical metric
 

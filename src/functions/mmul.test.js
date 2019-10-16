@@ -6,7 +6,7 @@
  * DS202: Simplify dynamic range loops
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const {run_test} = require('../test_helpers/run_test');
+const { run_test } = require('../test_helpers/run_test');
 export const test_mmul = function() {
   let asc;
   let i = 0;
@@ -30,7 +30,7 @@ export const test_mmul = function() {
   return logout('ok\n');
 };
 
-var test_mmulf = function(na, nb, nc) {
+let test_mmulf = function(na, nb, nc) {
   const a = mint(na);
   const b = mint(nb);
   const c = mint(nc);
@@ -44,7 +44,6 @@ var test_mmulf = function(na, nb, nc) {
   }
 };
 
-const {run_test} = require('../test_helpers/run_test');
 export const test_mdiv = function() {
   let asc;
   let i = 0;
@@ -76,7 +75,7 @@ export const test_mdiv = function() {
   return logout('ok\n');
 };
 
-var test_mdivf = function(na, nb, nc) {
+let test_mdivf = function(na, nb, nc) {
   const a = mint(na);
   const b = mint(nb);
   const c = mint(nc);
@@ -91,7 +90,6 @@ var test_mdivf = function(na, nb, nc) {
   }
 };
 
-const {run_test} = require('../test_helpers/run_test');
 export const test_mmod = function() {
   let asc;
   let i = 0;
@@ -117,7 +115,7 @@ export const test_mmod = function() {
   return logout('ok\n');
 };
 
-var test_mmodf = function(na, nb, nc) {
+let test_mmodf = function(na, nb, nc) {
   const a = mint(na);
   const b = mint(nb);
   const c = mint(nc);
