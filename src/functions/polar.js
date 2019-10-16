@@ -5,7 +5,8 @@
  * DS102: Remove unnecessary code created because of implicit returns
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const test_polar = () =>
+const {run_test} = require('../test_helpers/run_test');
+export const test_polar = () =>
   run_test([
     'polar(1+i)',
     '2^(1/2)*exp(1/4*i*pi)',

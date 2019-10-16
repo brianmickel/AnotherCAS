@@ -5,7 +5,8 @@
  * DS102: Remove unnecessary code created because of implicit returns
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const test_sin = () =>
+const {run_test} = require('../test_helpers/run_test');
+export const test_sin = () =>
   run_test([
     'sin(x)',
     'sin(x)',

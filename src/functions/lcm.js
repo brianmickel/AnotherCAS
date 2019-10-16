@@ -5,7 +5,8 @@
  * DS102: Remove unnecessary code created because of implicit returns
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const test_lcm = () =>
+const {run_test} = require('../test_helpers/run_test');
+export const test_lcm = () =>
   run_test([
     'lcm(4,6)',
     '12',

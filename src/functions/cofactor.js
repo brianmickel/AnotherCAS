@@ -5,7 +5,8 @@
  * DS102: Remove unnecessary code created because of implicit returns
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const test_cofactor = () =>
+const {run_test} = require('../test_helpers/run_test');
+export const test_cofactor = () =>
   run_test([
     'cofactor([[1,2],[3,4]],1,1)',
     '4',

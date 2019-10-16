@@ -5,7 +5,8 @@
  * DS102: Remove unnecessary code created because of implicit returns
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const test_quickfactor = function() {
+const {run_test} = require('../test_helpers/run_test');
+export const test_quickfactor = function() {
   let i = 0;
   logout('testing quickfactor\n');
   for (i = 2; i < 10001; i++) {

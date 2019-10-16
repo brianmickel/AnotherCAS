@@ -6,7 +6,8 @@
  * DS202: Simplify dynamic range loops
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const test_madd = function() {
+const {run_test} = require('../test_helpers/run_test');
+export const test_madd = function() {
   let asc;
   let i = 0;
   if (DEBUG) {
@@ -46,7 +47,8 @@ var test_maddf = function(na, nb, nc) {
   return errout();
 };
 
-const test_msub = function() {
+const {run_test} = require('../test_helpers/run_test');
+export const test_msub = function() {
   let asc;
   let i = 0;
   logout('test msub\n');

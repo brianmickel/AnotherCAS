@@ -5,7 +5,8 @@
  * DS102: Remove unnecessary code created because of implicit returns
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const test_coeff = () =>
+const {run_test} = require('../test_helpers/run_test');
+export const test_coeff = () =>
   run_test([
     'coeff(40*x^3+30*x^2+20*x+10,3)',
     '40',

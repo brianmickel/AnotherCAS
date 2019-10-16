@@ -5,7 +5,8 @@
  * DS102: Remove unnecessary code created because of implicit returns
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const test_circexp = () =>
+const {run_test} = require('../test_helpers/run_test');
+export const test_circexp = () =>
   run_test([
     'circexp(cos(x))',
     '1/2*exp(-i*x)+1/2*exp(i*x)',

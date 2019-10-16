@@ -6,7 +6,8 @@
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const test_gcd = function() {
+const {run_test} = require('../test_helpers/run_test');
+export const test_gcd = function() {
   const gcdTests = [];
 
   const GCD_TESTS_DONT_TEST_FACTOR = 1;

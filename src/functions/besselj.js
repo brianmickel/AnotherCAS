@@ -5,7 +5,8 @@
  * DS102: Remove unnecessary code created because of implicit returns
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const test_besselj = () =>
+const {run_test} = require('../test_helpers/run_test');
+export const test_besselj = () =>
   run_test([
     'besselj(x,n)',
     'besselj(x,n)',

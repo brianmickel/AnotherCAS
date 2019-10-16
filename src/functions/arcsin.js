@@ -5,7 +5,8 @@
  * DS102: Remove unnecessary code created because of implicit returns
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const test_arcsin = () =>
+const {run_test} = require('../test_helpers/run_test');
+export const test_arcsin = () =>
   run_test([
     'arcsin(-1)',
     '-1/2*pi',
