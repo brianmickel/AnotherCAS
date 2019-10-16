@@ -5,7 +5,7 @@
  * DS102: Remove unnecessary code created because of implicit returns
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const {run_test} = require('../test_helpers/run_test');
+import {run_test} from '../test_helpers/run_test';
 export const test_dependencies = function() {
   do_clearall();
 
