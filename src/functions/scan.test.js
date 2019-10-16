@@ -5,13 +5,9 @@
  * DS102: Remove unnecessary code created because of implicit returns
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-import {run_test} from '../test_helpers/run_test';
+import { run_test } from '../test_helpers/run_test';
 export const test_scan = function() {
-  if (DEBUG) {
-    console.log('test_scan ----------------------------');
-  }
-
-  return run_test([
+  run_test([
     'a^^b',
     'a^^ ? b\nStop: syntax error',
 

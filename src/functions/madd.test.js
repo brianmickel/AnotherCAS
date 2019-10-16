@@ -9,9 +9,7 @@
 export const test_madd = function() {
   let asc;
   let i = 0;
-  if (DEBUG) {
-    console.log('test madd');
-  }
+
   const m = mtotal;
   for (i = -100, asc = -100 <= 100; asc ? i < 100 : i > 100; asc ? i++ : i--) {
     for (
