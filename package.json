@@ -10,6 +10,10 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jasmine": "^3.4.4",
+    "@typescript-eslint/eslint-plugin": "^2.4.0",
+    "@typescript-eslint/parser": "^2.4.0",
+    "eslint": "^6.5.1",
+    "eslint-config-google": "^0.14.0",
     "karma": "^4.1.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-cli": "^2.0.0",
