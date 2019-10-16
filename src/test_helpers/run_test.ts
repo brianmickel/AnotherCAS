@@ -11,12 +11,11 @@ function unzippifyArray(s: string[]): [string, string][] {
   }
   return pairs;
 }
-
-export function run_test(s: string[]): void {
-  algebrite.run("clearall");
-  algebrite.run("e=quote(e)");
-  const tests = unzippifyArray(s);
-  tests.forEach(([input, expected]) => {
+*/
+export function runIndividualTests(testcases: [string, string][]): void {
+  testcases.forEach(([input, expected]) => {
+    algebrite.run('clearall');
+    algebrite.run('e=quote(e)');
     it(`${input} should return "${expected}"`, () => {
       let result: any;
       try {
@@ -29,9 +28,9 @@ export function run_test(s: string[]): void {
     });
   });
 }
-*/
+
 export function run_test(s: string[]): void {
-  it(`testing ${s[0]}`, () => {
+  it(`run_test testing ${s[0]}`, () => {
     const length = s.length;
     algebrite.run('clearall');
     algebrite.run('e=quote(e)');
