@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": false, // temporary
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "allowJs": true, // temporary
+    "lib": ["es2017", "dom"],
+    "outDir": "dist"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "src/**/*.test.*", "src/test_helpers"],
+  "typeRoots": ["node_modules/@types"]
+}
