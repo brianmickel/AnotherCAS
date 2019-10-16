@@ -1,11 +1,16 @@
-test_check = ->
-  if DEBUG then console.log "test_check ----------------------------"
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const test_check = function() {
+  if (DEBUG) { console.log("test_check ----------------------------"); }
 
-  run_test [
+  return run_test([
 
-    # note how check can turn an assignment
-    # into a test, so in this case a is not
-    # assigned anything
+    // note how check can turn an assignment
+    // into a test, so in this case a is not
+    // assigned anything
 
     "check(a=b)",
     "check(a=b)",
@@ -46,7 +51,7 @@ test_check = ->
     "check(and(1,1))",
     "1",
 
-    # if passed a value, check if non-zero
+    // if passed a value, check if non-zero
     "check(pi)",
     "1",
 
@@ -84,4 +89,5 @@ test_check = ->
     "check(1-i)",
     "1",
 
-  ]
+  ]);
+};

@@ -1,6 +1,11 @@
-test_multiply = ->
-  if DEBUG then console.log "test_multiply ----------------------------"
-  run_test [
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const test_multiply = function() {
+  if (DEBUG) { console.log("test_multiply ----------------------------"); }
+  return run_test([
 
       "0*a",
       "0",
@@ -38,27 +43,27 @@ test_multiply = ->
       "a^2*a^2",
       "a^4",
 
-      "2^a*2^(3-a)",    # symbolic exponents cancel
+      "2^a*2^(3-a)",    // symbolic exponents cancel
       "8",
 
       "sqrt(2)/2",
-      # leave the roots nice and
-      # clean in numerator, avoid these
-      # forms
-      #"2^(-1/2)",
+      // leave the roots nice and
+      // clean in numerator, avoid these
+      // forms
+      //"2^(-1/2)",
       "1/2*2^(1/2)",
 
       "2/sqrt(2)",
       "2^(1/2)",
 
       "-sqrt(2)/2",
-      # avoid having roots in denominator
-      #"-1/(2^(1/2))",
+      // avoid having roots in denominator
+      //"-1/(2^(1/2))",
       "-1/2*2^(1/2)",
 
       "2^(1/2-a)*2^a/10",
-      # avoid roots in denominator
-      #"1/(5*2^(1/2))",
+      // avoid roots in denominator
+      //"1/(5*2^(1/2))",
       "1/10*2^(1/2)",
 
       "i/4",
@@ -67,11 +72,12 @@ test_multiply = ->
       "1/(4 i)",
       "-1/4*i",
 
-      # ensure 1.0 is not discarded
+      // ensure 1.0 is not discarded
 
       "1.0 pi 1/2",
       "1.570796...",
 
       "1.0 1/2 pi",
       "1.570796...",
-    ]
+    ]);
+};

@@ -1,20 +1,30 @@
-test_mpow = ->
-  logout("testing mpow\n")
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * DS202: Simplify dynamic range loops
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const test_mpow = function() {
+  logout("testing mpow\n");
 
 
-  # small numbers
+  // small numbers
 
-  for i  in [-10...10]
-    a = mint(i)
-    x = 1
-    for j in [0...10]
-      b = mpow(a, j)
-      c = mint(x)
-      if (mcmp(b, c) != 0)
-        throw new Error("failed test_mpow")
-      x *= i
+  for (let i = -10, asc = -10 <= 10; asc ? i < 10 : i > 10; asc ? i++ : i--) {
+    const a = mint(i);
+    let x = 1;
+    for (let j = 0; j < 10; j++) {
+      const b = mpow(a, j);
+      const c = mint(x);
+      if (mcmp(b, c) !== 0) {
+        throw new Error("failed test_mpow");
+      }
+      x *= i;
+    }
+  }
 
 
-  logout("ok\n")
+  return logout("ok\n");
+};
 
-#endif
+//endif

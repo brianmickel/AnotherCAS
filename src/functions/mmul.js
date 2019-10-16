@@ -1,79 +1,110 @@
-test_mmul = ->
-  i = 0
-  j = 0
-  m = 0
-  logout("test mmul\n")
-  for i in [-100..100]
-    for j in [-100..100]
-      test_mmulf(i, j, i * j)
-  logout("ok\n")
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * DS202: Simplify dynamic range loops
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const test_mmul = function() {
+  let asc;
+  let i = 0;
+  let j = 0;
+  const m = 0;
+  logout("test mmul\n");
+  for (i = -100, asc = -100 <= 100; asc ? i <= 100 : i >= 100; asc ? i++ : i--) {
+    var asc1;
+    for (j = -100, asc1 = -100 <= 100; asc1 ? j <= 100 : j >= 100; asc1 ? j++ : j--) {
+      test_mmulf(i, j, i * j);
+    }
+  }
+  return logout("ok\n");
+};
 
-test_mmulf = (na, nb, nc) ->
+var test_mmulf = function(na, nb, nc) {
 
-  a = mint(na)
-  b = mint(nb)
-  c = mint(nc)
+  const a = mint(na);
+  const b = mint(nb);
+  const c = mint(nc);
 
-  d = mmul(a, b)
+  const d = mmul(a, b);
 
-  if (mcmp(c, d) == 0)
-    return
-  else
-    throw new Error("test_mmulf error")
+  if (mcmp(c, d) === 0) {
+    return;
+  } else {
+    throw new Error("test_mmulf error");
+  }
+};
 
-test_mdiv = ->
-  i = 0
-  j = 0
-  m = 0
-  logout("test mdiv\n")
-  for i in [-100..100]
-    for j in [-100..100]
-      if (j)
-        if i/j > 0
-          expectedResult = Math.floor(i / j)
-        else
-          expectedResult = Math.ceil(i / j)
-        test_mdivf(i, j, expectedResult)
-  logout("ok\n")
+const test_mdiv = function() {
+  let asc;
+  let i = 0;
+  let j = 0;
+  const m = 0;
+  logout("test mdiv\n");
+  for (i = -100, asc = -100 <= 100; asc ? i <= 100 : i >= 100; asc ? i++ : i--) {
+    var asc1;
+    for (j = -100, asc1 = -100 <= 100; asc1 ? j <= 100 : j >= 100; asc1 ? j++ : j--) {
+      if (j) {
+        var expectedResult;
+        if ((i/j) > 0) {
+          expectedResult = Math.floor(i / j);
+        } else {
+          expectedResult = Math.ceil(i / j);
+        }
+        test_mdivf(i, j, expectedResult);
+      }
+    }
+  }
+  return logout("ok\n");
+};
 
-test_mdivf = (na, nb, nc) ->
+var test_mdivf = function(na, nb, nc) {
 
-  a = mint(na)
-  b = mint(nb)
-  c = mint(nc)
+  const a = mint(na);
+  const b = mint(nb);
+  const c = mint(nc);
 
-  d = mdiv(a, b)
+  const d = mdiv(a, b);
 
-  if (mcmp(c, d) == 0)
-    return
-  else
-    console.log "debugger"
-    throw new Error("test_mdivf error")
+  if (mcmp(c, d) === 0) {
+    return;
+  } else {
+    console.log("debugger");
+    throw new Error("test_mdivf error");
+  }
+};
 
 
-test_mmod = ->
-  i = 0
-  j = 0
-  m = 0
-  logout("test mmod\n")
-  for i in [-100..100]
-    for j in [-100..100]
-      if (j)
-        test_mmodf(i, j, i % j)
-  logout("ok\n")
+const test_mmod = function() {
+  let asc;
+  let i = 0;
+  let j = 0;
+  const m = 0;
+  logout("test mmod\n");
+  for (i = -100, asc = -100 <= 100; asc ? i <= 100 : i >= 100; asc ? i++ : i--) {
+    var asc1;
+    for (j = -100, asc1 = -100 <= 100; asc1 ? j <= 100 : j >= 100; asc1 ? j++ : j--) {
+      if (j) {
+        test_mmodf(i, j, i % j);
+      }
+    }
+  }
+  return logout("ok\n");
+};
 
-test_mmodf = (na,nb,nc) ->
+var test_mmodf = function(na,nb,nc) {
 
-  a = mint(na)
-  b = mint(nb)
-  c = mint(nc)
+  const a = mint(na);
+  const b = mint(nb);
+  const c = mint(nc);
 
-  d = mmod(a, b)
+  const d = mmod(a, b);
 
-  if (mcmp(c, d) == 0)
-    return
-  else
-    throw new Error("test_mmodf error")
+  if (mcmp(c, d) === 0) {
+    return;
+  } else {
+    throw new Error("test_mmodf error");
+  }
+};
 
 
 
