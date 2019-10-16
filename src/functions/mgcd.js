@@ -6,7 +6,7 @@
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
 const test_mgcd = function() {
-  logout("testing mgcd\n");
+  logout('testing mgcd\n');
   for (let i = 1; i < 100; i++) {
     const a = mint(i);
     for (let j = 1; j < 100; j++) {
@@ -14,11 +14,11 @@ const test_mgcd = function() {
       const c = mgcd(a, b);
       const d = egcd(a, b);
       if (mcmp(c, d) !== 0) {
-        throw new Error("test_mgcd failed");
+        throw new Error('test_mgcd failed');
       }
     }
   }
-  return logout("ok\n");
+  return logout('ok\n');
 };
 
 // Euclid's algorithm
@@ -26,7 +26,7 @@ const test_mgcd = function() {
 var egcd = function(a, b) {
   let sign_ = 0;
   if (MZERO(b)) {
-    stop("divide by zero");
+    stop('divide by zero');
   }
   //b = mcopy(b)
   if (MZERO(a)) {
@@ -40,7 +40,6 @@ var egcd = function(a, b) {
     a = b;
     b = c;
   }
-  a = setSignTo(a,sign_);
+  a = setSignTo(a, sign_);
   return a;
 };
-

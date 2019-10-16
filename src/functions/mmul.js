@@ -11,18 +11,25 @@ const test_mmul = function() {
   let i = 0;
   let j = 0;
   const m = 0;
-  logout("test mmul\n");
-  for (i = -100, asc = -100 <= 100; asc ? i <= 100 : i >= 100; asc ? i++ : i--) {
+  logout('test mmul\n');
+  for (
+    i = -100, asc = -100 <= 100;
+    asc ? i <= 100 : i >= 100;
+    asc ? i++ : i--
+  ) {
     var asc1;
-    for (j = -100, asc1 = -100 <= 100; asc1 ? j <= 100 : j >= 100; asc1 ? j++ : j--) {
+    for (
+      j = -100, asc1 = -100 <= 100;
+      asc1 ? j <= 100 : j >= 100;
+      asc1 ? j++ : j--
+    ) {
       test_mmulf(i, j, i * j);
     }
   }
-  return logout("ok\n");
+  return logout('ok\n');
 };
 
 var test_mmulf = function(na, nb, nc) {
-
   const a = mint(na);
   const b = mint(nb);
   const c = mint(nc);
@@ -32,7 +39,7 @@ var test_mmulf = function(na, nb, nc) {
   if (mcmp(c, d) === 0) {
     return;
   } else {
-    throw new Error("test_mmulf error");
+    throw new Error('test_mmulf error');
   }
 };
 
@@ -41,13 +48,21 @@ const test_mdiv = function() {
   let i = 0;
   let j = 0;
   const m = 0;
-  logout("test mdiv\n");
-  for (i = -100, asc = -100 <= 100; asc ? i <= 100 : i >= 100; asc ? i++ : i--) {
+  logout('test mdiv\n');
+  for (
+    i = -100, asc = -100 <= 100;
+    asc ? i <= 100 : i >= 100;
+    asc ? i++ : i--
+  ) {
     var asc1;
-    for (j = -100, asc1 = -100 <= 100; asc1 ? j <= 100 : j >= 100; asc1 ? j++ : j--) {
+    for (
+      j = -100, asc1 = -100 <= 100;
+      asc1 ? j <= 100 : j >= 100;
+      asc1 ? j++ : j--
+    ) {
       if (j) {
         var expectedResult;
-        if ((i/j) > 0) {
+        if (i / j > 0) {
           expectedResult = Math.floor(i / j);
         } else {
           expectedResult = Math.ceil(i / j);
@@ -56,11 +71,10 @@ const test_mdiv = function() {
       }
     }
   }
-  return logout("ok\n");
+  return logout('ok\n');
 };
 
 var test_mdivf = function(na, nb, nc) {
-
   const a = mint(na);
   const b = mint(nb);
   const c = mint(nc);
@@ -70,31 +84,37 @@ var test_mdivf = function(na, nb, nc) {
   if (mcmp(c, d) === 0) {
     return;
   } else {
-    console.log("debugger");
-    throw new Error("test_mdivf error");
+    console.log('debugger');
+    throw new Error('test_mdivf error');
   }
 };
-
 
 const test_mmod = function() {
   let asc;
   let i = 0;
   let j = 0;
   const m = 0;
-  logout("test mmod\n");
-  for (i = -100, asc = -100 <= 100; asc ? i <= 100 : i >= 100; asc ? i++ : i--) {
+  logout('test mmod\n');
+  for (
+    i = -100, asc = -100 <= 100;
+    asc ? i <= 100 : i >= 100;
+    asc ? i++ : i--
+  ) {
     var asc1;
-    for (j = -100, asc1 = -100 <= 100; asc1 ? j <= 100 : j >= 100; asc1 ? j++ : j--) {
+    for (
+      j = -100, asc1 = -100 <= 100;
+      asc1 ? j <= 100 : j >= 100;
+      asc1 ? j++ : j--
+    ) {
       if (j) {
         test_mmodf(i, j, i % j);
       }
     }
   }
-  return logout("ok\n");
+  return logout('ok\n');
 };
 
-var test_mmodf = function(na,nb,nc) {
-
+var test_mmodf = function(na, nb, nc) {
   const a = mint(na);
   const b = mint(nb);
   const c = mint(nc);
@@ -104,9 +124,6 @@ var test_mmodf = function(na,nb,nc) {
   if (mcmp(c, d) === 0) {
     return;
   } else {
-    throw new Error("test_mmodf error");
+    throw new Error('test_mmodf error');
   }
 };
-
-
-

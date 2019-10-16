@@ -11,8 +11,7 @@ const test_mroot = function() {
   let j = 0;
   const mem = 0;
 
-  logout("testing mroot\n");
-
+  logout('testing mroot\n');
 
   // small numbers
 
@@ -22,14 +21,14 @@ const test_mroot = function() {
       //logout(i + " " + j)
       b = mpow(a, j);
       c = mroot(b, j);
-      if ((c === 0) || (mcmp(a, c) !== 0)) {
-        console.log("debugger");
-        throw new Error("failed test_mroot");
+      if (c === 0 || mcmp(a, c) !== 0) {
+        console.log('debugger');
+        throw new Error('failed test_mroot');
       }
     }
   }
 
-  logout(" ...mroot small numbers ok\n");
+  logout(' ...mroot small numbers ok\n');
 
   a = mint(12345);
 
@@ -37,12 +36,11 @@ const test_mroot = function() {
     //logout(i)
     b = mpow(a, i);
     c = mroot(b, i);
-    if ((c === 0) || (mcmp(a, c) !== 0)) {
-      throw new Error("failed");
+    if (c === 0 || mcmp(a, c) !== 0) {
+      throw new Error('failed');
     }
   }
 
-
-  logout(" ...mroot big numbers ok\n");
-  return logout("ok");
+  logout(' ...mroot big numbers ok\n');
+  return logout('ok');
 };

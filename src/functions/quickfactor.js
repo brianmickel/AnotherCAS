@@ -7,9 +7,9 @@
  */
 const test_quickfactor = function() {
   let i = 0;
-  logout("testing quickfactor\n");
+  logout('testing quickfactor\n');
   for (i = 2; i < 10001; i++) {
-    if ((i % 1000) === 0) {
+    if (i % 1000 === 0) {
       console.log(i);
     }
     let base = i;
@@ -20,7 +20,7 @@ const test_quickfactor = function() {
     let j = 0;
     while (base > 1) {
       let expo = 0;
-      while ((base % primetab[j]) === 0) {
+      while (base % primetab[j] === 0) {
         base /= primetab[j];
         expo++;
       }
@@ -35,14 +35,14 @@ const test_quickfactor = function() {
     const p2 = pop();
     const p1 = pop();
     if (!equal(p1, p2)) {
-      logout("failed\n");
+      logout('failed\n');
       print_lisp(p1);
       print_lisp(p2);
       errout();
     }
   }
-  console.log("quickfactor is ok");
-  return logout("ok\n");
+  console.log('quickfactor is ok');
+  return logout('ok\n');
 };
 
 //endif

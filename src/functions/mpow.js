@@ -7,8 +7,7 @@
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
 const test_mpow = function() {
-  logout("testing mpow\n");
-
+  logout('testing mpow\n');
 
   // small numbers
 
@@ -19,14 +18,13 @@ const test_mpow = function() {
       const b = mpow(a, j);
       const c = mint(x);
       if (mcmp(b, c) !== 0) {
-        throw new Error("failed test_mpow");
+        throw new Error('failed test_mpow');
       }
       x *= i;
     }
   }
 
-
-  return logout("ok\n");
+  return logout('ok\n');
 };
 
 //endif

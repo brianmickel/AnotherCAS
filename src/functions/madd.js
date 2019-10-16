@@ -9,21 +9,26 @@
 const test_madd = function() {
   let asc;
   let i = 0;
-  if (DEBUG) { console.log("test madd"); }
+  if (DEBUG) {
+    console.log('test madd');
+  }
   const m = mtotal;
   for (i = -100, asc = -100 <= 100; asc ? i < 100 : i > 100; asc ? i++ : i--) {
-    for (let j = -100, asc1 = -100 <= 100; asc1 ? j < 100 : j > 100; asc1 ? j++ : j--) {
+    for (
+      let j = -100, asc1 = -100 <= 100;
+      asc1 ? j < 100 : j > 100;
+      asc1 ? j++ : j--
+    ) {
       test_maddf(i, j, i + j);
     }
   }
   //if (m != mtotal)
   //  logout("memory leak\n")
   //  errout()
-  return logout("ok\n");
+  return logout('ok\n');
 };
 
 var test_maddf = function(na, nb, nc) {
-
   const a = mint(na);
   const b = mint(nb);
   const c = mint(nc);
@@ -33,7 +38,7 @@ var test_maddf = function(na, nb, nc) {
   if (mcmp(c, d) === 0) {
     return;
   } else {
-    throw new Error("test_maddf");
+    throw new Error('test_maddf');
   }
 
   //sprintf(logbuf, "%d %d %d %d\n", na, nb, nc, *d * MSIGN(d))
@@ -44,18 +49,26 @@ var test_maddf = function(na, nb, nc) {
 const test_msub = function() {
   let asc;
   let i = 0;
-  logout("test msub\n");
+  logout('test msub\n');
   const m = mtotal;
-  for (i = -100, asc = -100 <= 100; asc ? i <= 100 : i >= 100; asc ? i++ : i--) {
-    for (let j = -100, asc1 = -100 <= 100; asc1 ? j <= 100 : j >= 100; asc1 ? j++ : j--) {
+  for (
+    i = -100, asc = -100 <= 100;
+    asc ? i <= 100 : i >= 100;
+    asc ? i++ : i--
+  ) {
+    for (
+      let j = -100, asc1 = -100 <= 100;
+      asc1 ? j <= 100 : j >= 100;
+      asc1 ? j++ : j--
+    ) {
       test_msubf(i, j, i - j);
     }
   }
   if (m !== mtotal) {
-    logout("memory leak\n");
+    logout('memory leak\n');
     errout();
   }
-  return logout("ok\n");
+  return logout('ok\n');
 };
 
 var test_msubf = function(na, nb, nc) {

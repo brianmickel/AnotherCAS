@@ -5,20 +5,20 @@
  * DS102: Remove unnecessary code created because of implicit returns
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-const test_imag = () => run_test([
+const test_imag = () =>
+  run_test([
+    'imag(a+i*b)',
+    'b',
 
-  "imag(a+i*b)",
-  "b",
+    'imag(1+exp(i*pi/3))',
+    '1/2*3^(1/2)',
 
-  "imag(1+exp(i*pi/3))",
-  "1/2*3^(1/2)",
+    'imag(i)',
+    '1',
 
-  "imag(i)",
-  "1",
+    'imag((-1)^(1/3))',
+    '1/2*3^(1/2)',
 
-  "imag((-1)^(1/3))",
-  "1/2*3^(1/2)",
-
-  "imag(-i)",
-  "-1",
-]);
+    'imag(-i)',
+    '-1',
+  ]);
