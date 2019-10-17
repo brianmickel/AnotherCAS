@@ -1,26 +1,18 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Sanity-check the conversion and remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-import {run_test} from '../test_helpers/run_test';
-export const test_clock = () =>
-  run_test([
-    'clock(exp(i pi/3))',
-    '(-1)^(1/3)',
+import { runIndividualTests } from '../test_helpers/run_test';
 
-    'clock(exp(-i pi/3))',
-    //"-(-1)^(2/3)",
-    '1/(-1)^(1/3)',
-
-    'rect(clock(3+4*i))', // needs sin(arctan(x)) and cos(arctan(x))
-    '3+4*i',
-
-    'clock((-108+108*(-1)^(1/2)*3^(1/2))^(1/3))',
-    '6*(-1)^(2/9)',
-
+export function test_clock() {
+  runIndividualTests([
+    ['clock(exp(i pi/3))', '(-1)^(1/3)'],
+    [
+      'clock(exp(-i pi/3))',
+      //"-(-1)^(2/3)",
+      '1/(-1)^(1/3)',
+    ],
+    [
+      'rect(clock(3+4*i))', // needs sin(arctan(x)) and cos(arctan(x))
+      '3+4*i',
+    ],
+    ['clock((-108+108*(-1)^(1/2)*3^(1/2))^(1/3))', '6*(-1)^(2/9)'],
     // TODO
     // the changes to abs/mag of Jan 2017
     // make it so a ends up as absolute value
@@ -35,3 +27,4 @@ export const test_clock = () =>
     //"clock(exp(1/5*i*pi)*a)",
     //"(-1)^(1/5)*a",
   ]);
+}
