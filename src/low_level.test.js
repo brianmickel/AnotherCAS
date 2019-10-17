@@ -1,15 +1,16 @@
-const { test_inner } = require('./functions/inner.test');
-const { test_inv } = require('./functions/inv.test');
-const { test_madd } = require('./functions/madd.test');
-const { test_mgcd } = require('./functions/mgcd.test');
-const { test_mixedprint } = require('./functions/mixedprint.test');
-const { test_mmul } = require('./functions/mmul.test');
-const { test_mpow } = require('./functions/mpow.test');
-const { test_mprime } = require('./functions/mprime.test');
-const { test_mroot } = require('./functions/mroot.test');
-const { test_test } = require('./functions/test.test');
-const { test_transpose } = require('./functions/transpose.test');
-const { test_strings } = require('./functions/strings.test');
+import * as algebrite from './index';
+import { test_inner } from './functions/inner.test';
+import { test_inv } from './functions/inv.test';
+import { test_madd } from './functions/madd.test';
+import { test_mgcd } from './functions/mgcd.test';
+import { test_mixedprint } from './functions/mixedprint.test';
+import { test_mmul } from './functions/mmul.test';
+import { test_mpow } from './functions/mpow.test';
+import { test_mprime } from './functions/mprime.test';
+import { test_mroot } from './functions/mroot.test';
+import { test_test } from './functions/test.test';
+import { test_transpose } from './functions/transpose.test';
+import { test_strings } from './functions/strings.test';
 
 export const test_low_level = function() {
   algebrite.run('clearall'); // to initialize stack and memory
