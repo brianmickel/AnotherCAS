@@ -1,12 +1,5 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Sanity-check the conversion and remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-const { run_test } = require('../test_helpers/run_test');
-export const test_mgcd = function() {
+// eslint-disable-next-line require-jsdoc
+export function test_mgcd() {
   logout('testing mgcd\n');
   for (let i = 1; i < 100; i++) {
     const a = mint(i);
@@ -20,27 +13,27 @@ export const test_mgcd = function() {
     }
   }
   return logout('ok\n');
-};
+}
 
 // Euclid's algorithm
-
-let egcd = function(a, b) {
+// eslint-disable-next-line require-jsdoc
+function egcd(a, b) {
   let sign_ = 0;
   if (MZERO(b)) {
     stop('divide by zero');
   }
-  //b = mcopy(b)
+  // b = mcopy(b)
   if (MZERO(a)) {
     return b;
   }
   sign_ = MSIGN(b);
-  //a = mcopy(a)
+  // a = mcopy(a)
   while (!MZERO(b)) {
     const c = mmod(a, b);
-    //mfree(a)
+    // mfree(a)
     a = b;
     b = c;
   }
   a = setSignTo(a, sign_);
   return a;
-};
+}

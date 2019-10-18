@@ -1,24 +1,16 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Sanity-check the conversion and remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * DS202: Simplify dynamic range loops
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-const { run_test } = require('../test_helpers/run_test');
-export const test_mmul = function() {
+// eslint-disable-next-line require-jsdoc
+export function test_mmul() {
   let asc;
   let i = 0;
   let j = 0;
-  const m = 0;
+
   logout('test mmul\n');
   for (
     i = -100, asc = -100 <= 100;
     asc ? i <= 100 : i >= 100;
     asc ? i++ : i--
   ) {
-    var asc1;
+    let asc1;
     for (
       j = -100, asc1 = -100 <= 100;
       asc1 ? j <= 100 : j >= 100;
@@ -28,9 +20,10 @@ export const test_mmul = function() {
     }
   }
   return logout('ok\n');
-};
+}
 
-let test_mmulf = function(na, nb, nc) {
+// eslint-disable-next-line require-jsdoc
+function test_mmulf(na, nb, nc) {
   const a = mint(na);
   const b = mint(nb);
   const c = mint(nc);
@@ -42,27 +35,28 @@ let test_mmulf = function(na, nb, nc) {
   } else {
     throw new Error('test_mmulf error');
   }
-};
+}
 
-export const test_mdiv = function() {
+// eslint-disable-next-line require-jsdoc
+export function test_mdiv() {
   let asc;
   let i = 0;
   let j = 0;
-  const m = 0;
+
   logout('test mdiv\n');
   for (
     i = -100, asc = -100 <= 100;
     asc ? i <= 100 : i >= 100;
     asc ? i++ : i--
   ) {
-    var asc1;
+    let asc1;
     for (
       j = -100, asc1 = -100 <= 100;
       asc1 ? j <= 100 : j >= 100;
       asc1 ? j++ : j--
     ) {
       if (j) {
-        var expectedResult;
+        let expectedResult;
         if (i / j > 0) {
           expectedResult = Math.floor(i / j);
         } else {
@@ -73,9 +67,10 @@ export const test_mdiv = function() {
     }
   }
   return logout('ok\n');
-};
+}
 
-let test_mdivf = function(na, nb, nc) {
+// eslint-disable-next-line require-jsdoc
+function test_mdivf(na, nb, nc) {
   const a = mint(na);
   const b = mint(nb);
   const c = mint(nc);
@@ -88,20 +83,20 @@ let test_mdivf = function(na, nb, nc) {
     console.log('debugger');
     throw new Error('test_mdivf error');
   }
-};
+}
 
-export const test_mmod = function() {
+// eslint-disable-next-line require-jsdoc
+export function test_mmod() {
   let asc;
   let i = 0;
   let j = 0;
-  const m = 0;
   logout('test mmod\n');
   for (
     i = -100, asc = -100 <= 100;
     asc ? i <= 100 : i >= 100;
     asc ? i++ : i--
   ) {
-    var asc1;
+    let asc1;
     for (
       j = -100, asc1 = -100 <= 100;
       asc1 ? j <= 100 : j >= 100;
@@ -113,9 +108,10 @@ export const test_mmod = function() {
     }
   }
   return logout('ok\n');
-};
+}
 
-let test_mmodf = function(na, nb, nc) {
+// eslint-disable-next-line require-jsdoc
+function test_mmodf(na, nb, nc) {
   const a = mint(na);
   const b = mint(nb);
   const c = mint(nc);
@@ -127,4 +123,4 @@ let test_mmodf = function(na, nb, nc) {
   } else {
     throw new Error('test_mmodf error');
   }
-};
+}

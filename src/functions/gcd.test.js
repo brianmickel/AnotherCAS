@@ -1,13 +1,6 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Sanity-check the conversion and remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * DS207: Consider shorter variations of null checks
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-import {run_test} from '../test_helpers/run_test';
-export const test_gcd = function() {
+import { runSequentialTests } from '../test_helpers/run_test';
+
+export function test_gcd() {
   const gcdTests = [];
 
   const GCD_TESTS_DONT_TEST_FACTOR = 1;
@@ -97,8 +90,7 @@ export const test_gcd = function() {
   addGcdTest('(x+1)*(x+1)', 'x+1', 'x+1');
   addGcdTest('x*(x+1)', 'x', 'x');
   addGcdTest(
-    'x^2+7x+6',
-    'x^2-5x-6',
+    ['x^2+7x+6', 'x^2-5x-6'],
     'x+1',
     addGcdTest('x*(x+1)^2', 'x+1', 'x+1')
   );
@@ -124,5 +116,5 @@ export const test_gcd = function() {
   run_test(gcdTests);
 
   // multiple arguments
-  return run_test(['gcd(12,18,9)', '3']);
-};
+  return runSequentialTests(['gcd(12,18,9)', '3']);
+}

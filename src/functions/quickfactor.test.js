@@ -1,4 +1,5 @@
-export const test_quickfactor = function() {
+// eslint-disable-next-line require-jsdoc
+export function test_quickfactor() {
   let i = 0;
   logout('testing quickfactor\n');
   for (i = 2; i < 10001; i++) {
@@ -36,6 +37,4 @@ export const test_quickfactor = function() {
   }
   console.log('quickfactor is ok');
   return logout('ok\n');
-};
-
-//endif
+}

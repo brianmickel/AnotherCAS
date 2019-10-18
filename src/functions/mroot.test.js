@@ -1,16 +1,10 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Sanity-check the conversion and remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-import {run_test} from '../test_helpers/run_test';
-export const test_mroot = function() {
-  let a, b, c;
+// eslint-disable-next-line require-jsdoc
+export function test_mroot() {
+  let a;
+  let b;
+  let c;
   let i = 0;
   let j = 0;
-  const mem = 0;
 
   logout('testing mroot\n');
 
@@ -19,7 +13,7 @@ export const test_mroot = function() {
   for (i = 0; i < 10; i++) {
     a = mint(i);
     for (j = 1; j < 10; j++) {
-      //logout(i + " " + j)
+      // logout(i + " " + j)
       b = mpow(a, j);
       c = mroot(b, j);
       if (c === 0 || mcmp(a, c) !== 0) {
@@ -34,7 +28,7 @@ export const test_mroot = function() {
   a = mint(12345);
 
   for (i = 1; i < 10; i++) {
-    //logout(i)
+    // logout(i)
     b = mpow(a, i);
     c = mroot(b, i);
     if (c === 0 || mcmp(a, c) !== 0) {
@@ -44,4 +38,4 @@ export const test_mroot = function() {
 
   logout(' ...mroot big numbers ok\n');
   return logout('ok');
-};
+}

@@ -1,15 +1,7 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Sanity-check the conversion and remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-import {run_test} from '../test_helpers/run_test';
-export const test_mprime = function() {
+// eslint-disable-next-line require-jsdoc
+export function test_mprime() {
   let i = 0;
   let k = 0;
-  const m = 0;
   let t = 0;
   logout('test mprime\n');
   k = 0;
@@ -26,6 +18,4 @@ export const test_mprime = function() {
     }
   }
   return logout('ok\n');
-};
-
-//endif
+}

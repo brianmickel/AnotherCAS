@@ -1,16 +1,8 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Sanity-check the conversion and remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * DS202: Simplify dynamic range loops
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-export const test_madd = function() {
+// eslint-disable-next-line require-jsdoc
+export function test_madd() {
   let asc;
   let i = 0;
 
-  const m = mtotal;
   for (i = -100, asc = -100 <= 100; asc ? i < 100 : i > 100; asc ? i++ : i--) {
     for (
       let j = -100, asc1 = -100 <= 100;
@@ -20,13 +12,14 @@ export const test_madd = function() {
       test_maddf(i, j, i + j);
     }
   }
-  //if (m != mtotal)
+  // if (m != mtotal)
   //  logout("memory leak\n")
   //  errout()
   return logout('ok\n');
-};
+}
 
-let test_maddf = function(na, nb, nc) {
+// eslint-disable-next-line require-jsdoc
+function test_maddf(na, nb, nc) {
   const a = mint(na);
   const b = mint(nb);
   const c = mint(nc);
@@ -39,12 +32,13 @@ let test_maddf = function(na, nb, nc) {
     throw new Error('test_maddf');
   }
 
-  //sprintf(logbuf, "%d %d %d %d\n", na, nb, nc, *d * MSIGN(d))
+  // sprintf(logbuf, "%d %d %d %d\n", na, nb, nc, *d * MSIGN(d))
   logout(logbuf);
   return errout();
-};
+}
 
-export const test_msub = function() {
+// eslint-disable-next-line require-jsdoc
+export function test_msub() {
   let asc;
   let i = 0;
   logout('test msub\n');
@@ -67,10 +61,11 @@ export const test_msub = function() {
     errout();
   }
   return logout('ok\n');
-};
+}
 
-let test_msubf = function(na, nb, nc) {
-  //unsigned int *a, *b, *c, *d
+// eslint-disable-next-line require-jsdoc
+function test_msubf(na, nb, nc) {
+  // unsigned int *a, *b, *c, *d
 
   const a = mint(na);
   const b = mint(nb);
@@ -79,16 +74,14 @@ let test_msubf = function(na, nb, nc) {
   const d = msub(a, b);
 
   if (mcmp(c, d) === 0) {
-    //mfree(a)
-    //mfree(b)
-    //mfree(c)
-    //mfree(d)
+    // mfree(a)
+    // mfree(b)
+    // mfree(c)
+    // mfree(d)
     return;
   }
 
-  //sprintf(logbuf, "%d %d %d %d\n", na, nb, nc, *d * MSIGN(d))
+  // sprintf(logbuf, "%d %d %d %d\n", na, nb, nc, *d * MSIGN(d))
   logout(logbuf);
   return errout();
-};
-
-//endif
+}
