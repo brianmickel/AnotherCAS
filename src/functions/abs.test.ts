@@ -1,4 +1,7 @@
-import { run_test, runIndividualTests } from '../test_helpers/run_test';
+import {
+  runSequentialTests,
+  runIndividualTests,
+} from '../test_helpers/run_test';
 
 export function test_abs() {
   runIndividualTests([
@@ -15,7 +18,6 @@ export function test_abs() {
     ['abs(1-2.0*(-1)^(1/2))', '2.236068...'],
     ['abs(1)', '1'],
     ['abs(x)', 'abs(x)'],
-
     // true only if x is real,
     // counterexample: i, which makes 1 and -1
     ['abs(x)^2', 'x^2'],
@@ -56,25 +58,14 @@ export function test_abs() {
     ['abs(a/b)', 'abs(a)/abs(b)'],
     ['abs(1/a^b)', '1/(abs(a^b))'],
   ]);
-  run_test([
+
+  runSequentialTests([
     // Check that vector length is simplified
-
-    'P=[u*cos(v),u*sin(v),v]',
-    '',
-
-    'abs(cross(d(P,u),d(P,v)))',
-    '(1+u^2)^(1/2)',
-
-    'abs((-1)^(-0.666667+0.0291367/pi))',
-    '1.0',
-
-    'abs((-1)^(9/3))',
-    '1',
-
-    'abs((1)^(9/3))',
-    '1',
-
-    'abs((-1.0)^(9/3))',
-    '1.0',
+    ['P=[u*cos(v),u*sin(v),v]', ''],
+    ['abs(cross(d(P,u),d(P,v)))', '(1+u^2)^(1/2)'],
+    ['abs((-1)^(-0.666667+0.0291367/pi))', '1.0'],
+    ['abs((-1)^(9/3))', '1'],
+    ['abs((1)^(9/3))', '1'],
+    ['abs((-1.0)^(9/3))', '1.0'],
   ]);
 }

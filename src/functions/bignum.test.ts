@@ -1,26 +1,13 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Sanity-check the conversion and remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-import {run_test} from '../test_helpers/run_test';
-export const test_signs_in_rationals = () =>
-  run_test([
+import { runIndividualTests } from '../test_helpers/run_test';
+
+export function test_signs_in_rationals() {
+  runIndividualTests([
     // I found out about basic mistakes in
     // these very very late, better to
     // have those tests early on.
-
-    '1/1',
-    '1',
-
-    '-1/1',
-    '-1',
-
-    '1/(-1)',
-    '-1',
-
-    '(-1)/(-1)',
-    '1',
+    ['1/1', '1'],
+    ['-1/1', '-1'],
+    ['1/(-1)', '-1'],
+    ['(-1)/(-1)', '1'],
   ]);
+}

@@ -19,7 +19,6 @@ export function test_approxratio() {
     ['approxratio(0.0)', '0'],
     ['approxratio(2)', '2'],
     ['approxratio(2.0)', '2'],
-
     // -------------------------------
     // checking some "long primes"
     // also called long period primes, or maximal period primes
@@ -29,26 +28,20 @@ export function test_approxratio() {
     // big list here: https://oeis.org/A001913/b001913.txt
     // also see: https://oeis.org/A001913
     // -------------------------------
-
     // 1st long prime
     ['approxratio(0.14)', '1/7'],
-
     // 9th long prime, the biggest 2-digits long prime.
     // Often asked to
     // mental calculators to check their abilities.
     ['approxratio(0.0103)', '1/97'],
-
     // 60th long prime, the biggest 3-digits long prime.
     // Often asked to
     // mental calculators to check their abilities.
     ['approxratio(0.001017)', '1/983'],
-
     // 467th long prime, the biggest 4-digits long prime.
     ['approxratio(0.00010033)', '1/9967'],
-
     // 3617th long prime, the biggest 5-digits long prime.
     ['approxratio(0.0000100011)', '1/99989'],
-
     // 10000th long prime.
     ['approxratio(0.00000323701)', '1/308927'],
   ]);
