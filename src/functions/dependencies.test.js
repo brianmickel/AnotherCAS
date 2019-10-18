@@ -1,12 +1,5 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Sanity-check the conversion and remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-import {run_test} from '../test_helpers/run_test';
-export const test_dependencies = function() {
+// eslint-disable-next-line require-jsdoc
+export function test_dependencies() {
   do_clearall();
 
   let testResult = findDependenciesInScript('1');
@@ -1044,4 +1037,4 @@ export const test_dependencies = function() {
   do_clearall();
 
   return console.log('-- done dependency tests');
-};
+}
