@@ -1,5 +1,5 @@
 import { runIndividualTests } from '../test_helpers/run_test';
-export const test_power = () =>
+export function test_power() {
   runIndividualTests([
     // according to the notorious
     // "PEMDAS" mnemonic, the power
@@ -133,3 +133,4 @@ export const test_power = () =>
     ['exp(A-i*7*pi/2)', 'i*exp(A)'],
     ['exp(A-i*4*pi)', 'exp(A)'],
   ]);
+}

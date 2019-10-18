@@ -1,4 +1,7 @@
-import { runIndividualTests, run_test } from '../test_helpers/run_test';
+import {
+  runIndividualTests,
+  runSequentialTests,
+} from '../test_helpers/run_test';
 
 export function test_polar() {
   runIndividualTests([
@@ -33,14 +36,13 @@ export function test_polar() {
     // up with a real
     ['polar((-1)^(1/6) - (-1)^(5/6))', '3^(1/2)'],
   ]);
-  run_test([
+  runSequentialTests([
     // this is also "-(-1)^(3/4)" but we get to that after the simplification after
     // this test
-
-    '-i*(-2*polar((-1)^(1/6))/polar((3^(1/2)))+2*polar((-1)^(5/6))/polar((3^(1/2))))^(1/4)*(2*polar((-1)^(1/6))/polar((3^(1/2)))-2*polar((-1)^(5/6))/polar((3^(1/2))))^(1/4)/(2^(1/2))',
-    '-i*(-2*exp(1/6*i*pi)/(3^(1/2))+2*exp(5/6*i*pi)/(3^(1/2)))^(1/4)*(2*exp(1/6*i*pi)/(3^(1/2))-2*exp(5/6*i*pi)/(3^(1/2)))^(1/4)/(2^(1/2))',
-
-    'simplify',
-    '(1-i)/(2^(1/2))',
+    [
+      '-i*(-2*polar((-1)^(1/6))/polar((3^(1/2)))+2*polar((-1)^(5/6))/polar((3^(1/2))))^(1/4)*(2*polar((-1)^(1/6))/polar((3^(1/2)))-2*polar((-1)^(5/6))/polar((3^(1/2))))^(1/4)/(2^(1/2))',
+      '-i*(-2*exp(1/6*i*pi)/(3^(1/2))+2*exp(5/6*i*pi)/(3^(1/2)))^(1/4)*(2*exp(1/6*i*pi)/(3^(1/2))-2*exp(5/6*i*pi)/(3^(1/2)))^(1/4)/(2^(1/2))',
+    ],
+    ['simplify', '(1-i)/(2^(1/2))'],
   ]);
 }

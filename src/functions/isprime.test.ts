@@ -1,6 +1,6 @@
 import { runIndividualTests } from '../test_helpers/run_test';
 
-export const test_isprime = () =>
+export function test_isprime() {
   runIndividualTests([
     // 0 and 1 are not prime numbers
     ['isprime(0)', '0'],
@@ -15,3 +15,4 @@ export const test_isprime = () =>
     ['isprime(2^50-71)', '1'],
     ['isprime(2^40-87)', '1'],
   ]);
+}

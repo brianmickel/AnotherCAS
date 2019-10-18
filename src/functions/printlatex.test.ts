@@ -1,4 +1,7 @@
-import { runIndividualTests, run_test } from '../test_helpers/run_test';
+import {
+  runIndividualTests,
+  runSequentialTests,
+} from '../test_helpers/run_test';
 
 export function test_printlatex() {
   runIndividualTests([
@@ -59,11 +62,9 @@ export function test_printlatex() {
       'f(x)=\\left\\{ \\begin{array}{ll}{-x-4} & if & {x} < {3} \\\\\\\\{xx+7} & if & {3} \\leq {x} \\\\\\\\{\\frac{120}{x}+5} & otherwise  \\end{array} \\right.',
     ],
   ]);
-  run_test([
-    'printlatex(1/x+x^3+1+1)',
-    '2+\\frac{1}{x}+x^3',
 
-    'lastlatexprint == "2+\\frac{1}{x}+x^3"',
-    '1',
+  runSequentialTests([
+    ['printlatex(1/x+x^3+1+1)', '2+\\frac{1}{x}+x^3'],
+    ['lastlatexprint == "2+\\frac{1}{x}+x^3"', '1'],
   ]);
 }
