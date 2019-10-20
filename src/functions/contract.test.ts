@@ -1,7 +1,10 @@
-import { runSequentialTests } from '../test_helpers/run_test';
+import {
+  runSequentialTests,
+  runIndividualTests,
+} from '../test_helpers/run_test';
 
 export function test_contract() {
-  runSequentialTests([
+  runIndividualTests([
     ['contract(0)', '0'],
     ['contract(0.0)', '0'],
     // this is same as contract(hilbertmatrix(20))
@@ -26,6 +29,9 @@ export function test_contract() {
     ],
     ['contract([[a,b],[c,d]])', 'a+d'],
     ['contract([[1,2],[3,4]],1,2)', '5'],
+  ]);
+
+  runSequentialTests([
     ['A=[[a11,a12],[a21,a22]]', ''],
     ['B=[[b11,b12],[b21,b22]]', ''],
     [

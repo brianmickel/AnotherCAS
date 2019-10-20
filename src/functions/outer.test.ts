@@ -1,10 +1,16 @@
-import { runSequentialTests } from '../test_helpers/run_test';
+import {
+  runSequentialTests,
+  runIndividualTests,
+} from '../test_helpers/run_test';
 
 export function test_outer() {
-  runSequentialTests([
+  runIndividualTests([
     ['outer(a,b)', 'a*b'],
     ['outer(a,[b1,b2])', '[a*b1,a*b2]'],
     ['outer([a1,a2],b)', '[a1*b,a2*b]'],
+  ]);
+
+  runSequentialTests([
     ['H33=hilbert(3)', ''],
     ['H44=hilbert(4)', ''],
     ['H55=hilbert(5)', ''],

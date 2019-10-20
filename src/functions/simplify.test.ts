@@ -16,11 +16,13 @@ export function test_simplify() {
     ['simplify(A/(A+B)+B/(A+B))', '1'],
     ['simplify((A-B)/(B-A))', '-1'],
   ]);
+
   runSequentialTests([
     ['A=[[A11,A12],[A21,A22]]', ''],
     ['simplify(det(A) inv(A) - adj(A))', '0'],
     ['A=quote(A)', ''],
   ]);
+
   runIndividualTests([
     [
       `simplify(-3 exp(-1/3 r + i phi) cos(theta) / sin(theta)\

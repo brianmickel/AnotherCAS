@@ -1,7 +1,10 @@
-import { runSequentialTests } from '../test_helpers/run_test';
+import {
+  runSequentialTests,
+  runIndividualTests,
+} from '../test_helpers/run_test';
 
 export function test_mixedprint() {
-  runSequentialTests([
+  runIndividualTests([
     ['1.0', '1.0'],
     ['1111 * 1111.0', '1234321.0'],
     ['1111.0 * 1111', '1234321.0'],
@@ -21,7 +24,9 @@ export function test_mixedprint() {
     ['1.0*10^(-6)', '0.000001'],
     // check that this doesn't return 0.0
     ['1.0*10^(-7)', '0.000000...'],
-    // ------------------------------------------
+  ]);
+
+  runSequentialTests([
     ['maxFixedPrintoutDigits', '6'],
     ['maxFixedPrintoutDigits=20', ''],
     ['maxFixedPrintoutDigits', '20'],
@@ -40,8 +45,9 @@ export function test_mixedprint() {
     ['print2dascii', '1.0*10^(-15)'],
     ['forceFixedPrintout=1', ''],
     ['maxFixedPrintoutDigits=6', ''],
-    // ------------------------------------------
+  ]);
 
+  runSequentialTests([
     ['float(pi)', '3.141593...'],
     ['print("hello")', '"hello"'],
     ['-sqrt(2)/2', '-1/2*2^(1/2)'],
@@ -65,6 +71,9 @@ export function test_mixedprint() {
       '2*2^(1/2)4*2^(1/2)/((2+2^(1/2))^(1/2))',
     ],
     ['clearall', ''],
+  ]);
+
+  runSequentialTests([
     ['print2dascii([[a,b],[c,d]])', 'a   b\n\nc   d'],
     [
       'print2dascii(1/sqrt(-15))',

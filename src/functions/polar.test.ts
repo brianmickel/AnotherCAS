@@ -36,6 +36,7 @@ export function test_polar() {
     // up with a real
     ['polar((-1)^(1/6) - (-1)^(5/6))', '3^(1/2)'],
   ]);
+
   runSequentialTests([
     // this is also "-(-1)^(3/4)" but we get to that after the simplification after
     // this test

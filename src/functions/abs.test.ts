@@ -63,6 +63,10 @@ export function test_abs() {
     // Check that vector length is simplified
     ['P=[u*cos(v),u*sin(v),v]', ''],
     ['abs(cross(d(P,u),d(P,v)))', '(1+u^2)^(1/2)'],
+    ['P=quote(P)', ''],
+  ]);
+
+  runIndividualTests([
     ['abs((-1)^(-0.666667+0.0291367/pi))', '1.0'],
     ['abs((-1)^(9/3))', '1'],
     ['abs((1)^(9/3))', '1'],

@@ -15,7 +15,6 @@ export function test_product() {
     // ---------------------------
     ['f(a,b)=product(k,k,a,b)', ''],
     ['f(1,2)', '2'],
-    // --- cleanup
     ['a = quote(a)', ''],
     ['f = quote(f)', ''],
   ]);

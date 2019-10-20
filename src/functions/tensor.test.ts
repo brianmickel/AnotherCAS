@@ -51,6 +51,10 @@ export function test_tensor() {
     ['c=[7,8,9]', ''],
     ['rank([a,b,c])', '2'],
     ['[a,b,c]', '[[1,2,3],[4,5,6],[7,8,9]]'],
+    ['a=quote(a)', ''],
+  ]);
+
+  runSequentialTests([
     // -------------------------------------------------------
     // parsing, assigments and invokations calisthenics
     // mixes [] used for a) tensor building and b) tensor indexing
@@ -67,11 +71,29 @@ export function test_tensor() {
     ['a[2](9)', '10'],
     ['a[f(1)](f(8))', '10'],
     ['a[a[f(1)](1)](a[f(1)](8))', '10'],
+    // cleanup
+    ['a=quote(a)', ''],
+    ['b=quote(b)', ''],
+    ['c=quote(c)', ''],
+    ['f=quote(f)', ''],
+    ['g=quote(g)', ''],
+  ]);
+
+  runSequentialTests([
     // --------------------
     ['g(x) = x + 1', ''],
     ['f() = [1,g,3]', ''],
     ['a=[1,f,3]', ''],
     ['a[2]()[2](7)', '8'],
+    // cleanup
+    ['a=quote(a)', ''],
+    ['b=quote(b)', ''],
+    ['c=quote(c)', ''],
+    ['f=quote(f)', ''],
+    ['g=quote(g)', ''],
+  ]);
+
+  runSequentialTests([
     // --------------------
     ['g(x) = x + 1', ''],
     ['f() = [[1,g,3],[0,0,0],[0,0,0]]', ''],
@@ -83,20 +105,30 @@ export function test_tensor() {
     ['(((a[a[1]+a[1]]())[a[1]])[a[1]+a[1]])(8)', '9'],
     ['f()[1][2](8)', '9'],
     ['f()[a[1]][a[1]+a[1]](8)', '9'],
-    // --------------------
-    ['g(x) = transpose(x)', ''],
-    ['f() = [[1,g,3],[0,0,0],[0,0,0]]', ''],
-    ['a=[1,f,3]', ''],
-    ['a[2]()[1][2]([[1,2,3,4]])', '[[1],[2],[3],[4]]'],
-    // --------------------
-    ['unit(x)', 'unit(x)'],
-    ['unit(3)', '[[1,0,0],[0,1,0],[0,0,1]]'],
-    ['unit(1)', '[[1]]'],
     // cleanup
     ['a=quote(a)', ''],
     ['b=quote(b)', ''],
     ['c=quote(c)', ''],
     ['f=quote(f)', ''],
     ['g=quote(g)', ''],
+  ]);
+
+  runSequentialTests([
+    ['g(x) = transpose(x)', ''],
+    ['f() = [[1,g,3],[0,0,0],[0,0,0]]', ''],
+    ['a=[1,f,3]', ''],
+    ['a[2]()[1][2]([[1,2,3,4]])', '[[1],[2],[3],[4]]'],
+    // cleanup
+    ['a=quote(a)', ''],
+    ['b=quote(b)', ''],
+    ['c=quote(c)', ''],
+    ['f=quote(f)', ''],
+    ['g=quote(g)', ''],
+  ]);
+
+  runSequentialTests([
+    ['unit(x)', 'unit(x)'],
+    ['unit(3)', '[[1,0,0],[0,1,0],[0,0,1]]'],
+    ['unit(1)', '[[1]]'],
   ]);
 }
