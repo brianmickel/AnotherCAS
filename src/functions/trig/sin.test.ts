@@ -1,7 +1,7 @@
 import {
   runSequentialTests,
   runIndividualTests,
-} from '../test_helpers/run_test';
+} from '../../test_helpers/run_test';
 export function test_sin() {
   runIndividualTests([
     ['sin(x)', 'sin(x)'],

@@ -1,13 +1,16 @@
 import {
   runSequentialTests,
   runIndividualTests,
-} from '../test_helpers/run_test';
+} from '../../test_helpers/run_test';
 
 export function test_tan() {
-  runSequentialTests([
+  runIndividualTests([
     ['tan(x)', 'tan(x)'],
     ['tan(-x)', '-tan(x)'],
     ['tan(b-a)', '-tan(a-b)'],
+  ]);
+
+  runSequentialTests([
     // check against the floating point math library
     ['f(a,x)=1+tan(float(a/360*2*pi))-float(x)+tan(a/360*2*pi)-x', ''],
     ['f(0,0)', '1.0'], // 0

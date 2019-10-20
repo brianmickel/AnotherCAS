@@ -1,4 +1,4 @@
-import { runIndividualTests } from '../test_helpers/run_test';
+import { runIndividualTests } from '../../test_helpers/run_test';
 
 export function test_arcsinh() {
   runIndividualTests([

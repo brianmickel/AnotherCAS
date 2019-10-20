@@ -1,7 +1,7 @@
 import {
   runIndividualTests,
   runSequentialTests,
-} from '../test_helpers/run_test';
+} from '../../test_helpers/run_test';
 
 export function test_cos() {
   runIndividualTests([
