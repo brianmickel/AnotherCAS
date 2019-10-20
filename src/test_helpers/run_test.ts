@@ -3,8 +3,6 @@ const algebrite = require('../index');
 export function runIndividualTests(testcases: [string, string][]): void {
   testcases.forEach(([input, expected]) => {
     algebrite.run('clearall');
-    algebrite.run('e=quote(e)');
-    algebrite.run('x=quote(x)'); // REMOVE! something is interfering with the value of x
     it(`${input} should return "${expected}"`, () => {
       let result: any;
       try {
@@ -15,13 +13,13 @@ export function runIndividualTests(testcases: [string, string][]): void {
       }
       expect(result).toBe(expected);
     });
+    algebrite.run('clearall');
   });
 }
 
 export function runSequentialTests(testcases: [string, string][]): void {
-  it(`run_test testing ${testcases[0]}`, () => {
-    algebrite.run('clearall');
-    algebrite.run('e=quote(e)');
+  it(`runSequentialTests testing ${testcases[0]}`, () => {
+    algebrite.init();
     testcases.forEach(([input, expected]) => {
       let result: any;
       try {
@@ -32,6 +30,7 @@ export function runSequentialTests(testcases: [string, string][]): void {
       }
       expect(result).toBe(expected);
     });
+    algebrite.run('clearall');
   });
 }
 
@@ -61,5 +60,6 @@ export function run_test(s: string[]): void {
       }
       expect(result).toBe(expected);
     });
+    algebrite.run('clearall');
   });
 }
