@@ -74,6 +74,7 @@ export function test_roots() {
     // is that the next few tests work, where we plug in the
     // symbolic solutions in the polynomial again and we check that we
     // get the zeroes.
+    ['thePoly = quote(thePoly)', ''],
     ['clearall', ''],
   ]);
 
@@ -93,6 +94,7 @@ export function test_roots() {
     ['roots(x^3 - 8x + 3)', '[-3,3/2-1/2*5^(1/2),3/2+1/2*5^(1/2)]'],
     ['roots(x^3 - 8x - 3)', '[3,-3/2-1/2*5^(1/2),-3/2+1/2*5^(1/2)]'],
     ['roots(x^3 - 18x + 35)', '[-5,5/2-1/2*i*3^(1/2),5/2+1/2*i*3^(1/2)]'],
+    ['thePoly = quote(thePoly)', ''],
     ['clearall', ''],
   ]);
 
@@ -108,6 +110,7 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-15))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-15))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-15))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
     ['clearall', ''],
   ]);
 
@@ -125,6 +128,7 @@ export function test_roots() {
     ],
     ['roots(x^3 - 15x - 4)', '[4,-2-3^(1/2),-2+3^(1/2)]'],
     ['roots(2*x^3 - 4x^2 - 22*x + 24)', '[-3,1,4]'],
+    ['thePoly = quote(thePoly)', ''],
     ['clearall', ''],
   ]);
 
@@ -139,6 +143,7 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(10^(-13))),(abs(float(subst(float(last[2]),x,thePoly))) < float(10^(-13))), (abs(float(subst(float(last[3]),x,thePoly))) < float(10^(-13))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
     ['clearall', ''],
   ]);
 
@@ -154,6 +159,7 @@ export function test_roots() {
       '1',
     ],
     ['roots(1*x^3 + 6*x^2 + 12*x + 8)', '-2'],
+    ['thePoly = quote(thePoly)', ''],
     ['clearall', ''],
   ]);
 
@@ -172,6 +178,7 @@ export function test_roots() {
       'roots(1*x^3 + 0*x^2 - 18*x + 35)',
       '[-5,5/2-1/2*i*3^(1/2),5/2+1/2*i*3^(1/2)]',
     ],
+    ['thePoly = quote(thePoly)', ''],
     ['clearall', ''],
   ]);
 
@@ -188,6 +195,7 @@ export function test_roots() {
     ],
     ['roots(2*x^3 - 30*x^2 + 162*x - 350)', '[7,4-3*i,4+3*i]'],
     ['roots(1*x^3 - 4*x^2 - 6*x + 5)', '[5,-1/2-1/2*5^(1/2),-1/2+1/2*5^(1/2)]'],
+    ['thePoly = quote(thePoly)', ''],
     ['clearall', ''],
   ]);
 
@@ -202,7 +210,11 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-14))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-14))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-14))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
     ['clearall', ''],
+  ]);
+
+  runSequentialTests([
     // DOES use cubic formula
     ['thePoly = 3*x^3 + 21*x^2 + 2*x + 3', ''],
     [
@@ -213,6 +225,7 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(10^(-12))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
     ['clearall', ''],
   ]);
 
@@ -236,6 +249,7 @@ export function test_roots() {
       'roots(3*x^3 - 5*x^2 - 1*x - 2)',
       '[2,-1/6-1/6*i*11^(1/2),-1/6+1/6*i*11^(1/2)]',
     ],
+    ['thePoly = quote(thePoly)', ''],
     ['clearall', ''],
   ]);
 
@@ -250,6 +264,7 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-15))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-15))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-15))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
     ['clearall', ''],
   ]);
 
@@ -268,6 +283,7 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-15))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-15))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-15))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
     ['clearall', ''],
   ]);
 
@@ -285,6 +301,7 @@ export function test_roots() {
       '1',
     ],
     // some quartics
+    ['thePoly = quote(thePoly)', ''],
     ['clearall', ''],
   ]);
 
@@ -300,6 +317,8 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-15))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-15))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-15))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-15))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -314,6 +333,8 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-12))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -329,6 +350,8 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[5]),x,thePoly))) < float(2*10^(-12))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -353,6 +376,8 @@ export function test_roots() {
     // fails.
     //"and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[5]),x,thePoly))) < float(2*10^(-12))))",
     //"1",
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -378,6 +403,8 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-7))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-7))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-7))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -389,6 +416,8 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-12))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -400,6 +429,8 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-12))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -414,6 +445,8 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-12))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -425,6 +458,8 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -447,6 +482,8 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -461,6 +498,8 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-12))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -472,6 +511,8 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -484,6 +525,8 @@ export function test_roots() {
       '1',
     ],
     // some quartics
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -498,6 +541,8 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(8*10^(-15))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-15))), (abs(float(subst(float(last[3]),x,thePoly))) < float(8*10^(-15))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-15))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -509,12 +554,16 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
   runSequentialTests([
     ['thePoly = 2*x^4 - 8*x^3 + 2*x^2 + 24*x - 14', ''],
     ['theRoots = roots(thePoly)', ''],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -529,6 +578,8 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-12))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -543,6 +594,8 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-12))))',
       '1',
     ],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -554,26 +607,16 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-12))))',
       '1',
     ],
-    //"thePoly = 4* x^4 - 9*x^3 + 22*x^2 + 28*x - 120",
-    //"",
-    //
+    // ["thePoly = 4* x^4 - 9*x^3 + 22*x^2 + 28*x - 120", ""],
     // these are really ugly - sympy or wolfram alpha don't give clean symbolic solutions either
-    //"theRoots = roots(thePoly)",
-    //"",
-    //
-    //"and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-12))))",
-    //"1",
-    //
-    //"thePoly = -20*x^4 + 5*x^3 + 17*x^2 - 29*x + 87",
-    //"",
-    //
+    // ["theRoots = roots(thePoly)", ""],
+    // ["and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-12))))", "1"],
+    // ["thePoly = -20*x^4 + 5*x^3 + 17*x^2 - 29*x + 87", ""],
     // these are really ugly - sympy or wolfram alpha don't give clean symbolic solutions either
-    //"theRoots = roots(thePoly)",
-    //"",
-    //
-    //"and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-12))))",
-    //"1",
-    //
+    // ["theRoots = roots(thePoly)", ""],
+    // ["and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-12))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-12))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-12))))", "1"],
+    ['thePoly = quote(thePoly)', ''],
+    ['theRoots = quote(theRoots)', ''],
     ['clearall', ''],
   ]);
 
@@ -585,7 +628,6 @@ export function test_roots() {
       'and((abs(float(subst(float(last[1]),x,thePoly))) < float(2*10^(-15))),(abs(float(subst(float(last[2]),x,thePoly))) < float(2*10^(-15))), (abs(float(subst(float(last[3]),x,thePoly))) < float(2*10^(-15))), (abs(float(subst(float(last[4]),x,thePoly))) < float(2*10^(-15))))',
       '1',
     ],
-    // clean up
     ['thePoly = quote(thePoly)', ''],
     ['theRoots = quote(theRoots)', ''],
   ]);

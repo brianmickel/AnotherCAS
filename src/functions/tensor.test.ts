@@ -62,7 +62,6 @@ export function test_tensor() {
     // b) function invokation and c) precedence
     // Nests functions and matrices inside one another.
     // -------------------------------------------------------
-    // --------------------
     ['f(x) = x + 1', ''],
     ['a=[1,f,3]', ''],
     ['a[2]', 'function (x) -> x+1'],
@@ -71,7 +70,6 @@ export function test_tensor() {
     ['a[2](9)', '10'],
     ['a[f(1)](f(8))', '10'],
     ['a[a[f(1)](1)](a[f(1)](8))', '10'],
-    // cleanup
     ['a=quote(a)', ''],
     ['b=quote(b)', ''],
     ['c=quote(c)', ''],
@@ -80,12 +78,10 @@ export function test_tensor() {
   ]);
 
   runSequentialTests([
-    // --------------------
     ['g(x) = x + 1', ''],
     ['f() = [1,g,3]', ''],
     ['a=[1,f,3]', ''],
     ['a[2]()[2](7)', '8'],
-    // cleanup
     ['a=quote(a)', ''],
     ['b=quote(b)', ''],
     ['c=quote(c)', ''],
@@ -94,7 +90,6 @@ export function test_tensor() {
   ]);
 
   runSequentialTests([
-    // --------------------
     ['g(x) = x + 1', ''],
     ['f() = [[1,g,3],[0,0,0],[0,0,0]]', ''],
     ['a=[1,f,3]', ''],
@@ -105,7 +100,6 @@ export function test_tensor() {
     ['(((a[a[1]+a[1]]())[a[1]])[a[1]+a[1]])(8)', '9'],
     ['f()[1][2](8)', '9'],
     ['f()[a[1]][a[1]+a[1]](8)', '9'],
-    // cleanup
     ['a=quote(a)', ''],
     ['b=quote(b)', ''],
     ['c=quote(c)', ''],
@@ -118,7 +112,6 @@ export function test_tensor() {
     ['f() = [[1,g,3],[0,0,0],[0,0,0]]', ''],
     ['a=[1,f,3]', ''],
     ['a[2]()[1][2]([[1,2,3,4]])', '[[1],[2],[3],[4]]'],
-    // cleanup
     ['a=quote(a)', ''],
     ['b=quote(b)', ''],
     ['c=quote(c)', ''],

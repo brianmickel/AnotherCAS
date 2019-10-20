@@ -52,11 +52,7 @@ export function test_power() {
     ['(-4.0)^(1.5)', '-8.0*i'],
     ['(-4.0)^(3/2)', '-8.0*i'],
     // usually the rectangular form is returned.
-    [
-      '(-1)^(1/3)',
-      //"(-1)^(1/3)",
-      '1/2+1/2*i*3^(1/2)',
-    ],
+    ['(-1)^(1/3)', '1/2+1/2*i*3^(1/2)'], //"(-1)^(1/3)",
     // note how the "double" type
     // is toxic i.e. it propagates through
     // everything it touches.
@@ -67,11 +63,7 @@ export function test_power() {
     // this also has a nested radical
     // form but we are not calculating
     // that.
-    [
-      '(-1)^(1/3)*2^(1/4)',
-      //"(-1)^(1/3)*2^(1/4)",
-      '1/2*2^(1/4)+1/2*i*2^(1/4)*3^(1/2)',
-    ],
+    ['(-1)^(1/3)*2^(1/4)', '1/2*2^(1/4)+1/2*i*2^(1/4)*3^(1/2)'], //"(-1)^(1/3)*2^(1/4)",
     ['(-1)^(1/2)', 'i'],
     ['sqrt(1000000)', '1000'],
     ['sqrt(-1000000)', '1000*i'],

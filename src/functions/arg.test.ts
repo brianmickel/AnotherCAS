@@ -22,25 +22,19 @@ export function test_arg() {
     ['assumeRealVariables = 0', ''],
     ['arg(a)', 'arg(a)'],
     // TODO this is wrong
-    //"arg(a*exp(b+i*pi/5))",
-    //"1/5*pi",
-
+    // ["arg(a*exp(b+i*pi/5))", "1/5*pi"],
     // this is wrong
-    //"arg(-1)",
-    //"-pi",
-
+    // ["arg(-1)", "-pi"],
     // this is also highly debatable
     // take the example
     // a = -1-i
     // then arg(a) - arg(-a) should give pi
     // but arg(1+i) - arg(-1-i) gives -pi instead
-    // "arg(-a)",
-    // "-pi+arg(a)",
+    // ["arg(-a)", "-pi+arg(a)"],
     ['assumeRealVariables = 1', ''],
     // --------------------------------------------------
     // TODO this is wrong.
-    //"arg(a*exp(b+i*pi/5))",
-    //"1/5*pi",
+    // ["arg(a*exp(b+i*pi/5))", "1/5*pi"],
     // referencing the test above, if
     // a is positive:
     ['arg(abs(a)*exp(b+i*pi/5))', '1/5*pi'],
@@ -52,8 +46,7 @@ export function test_arg() {
     ['arg(a)', 'arg(a)'],
     // this is also wrong, this should
     // be either zero or pi
-    //"arg(-a)",
-    //"-pi+arg(a)",
+    // ["arg(-a)", "-pi+arg(a)"],
     ['arg(-(-1)^(1/3))', '-2/3*pi'],
     ['arg(-exp(i*pi/3))', '-2/3*pi'],
     ['arg(-i)', '-1/2*pi'],

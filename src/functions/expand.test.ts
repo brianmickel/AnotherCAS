@@ -1,11 +1,5 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Sanity-check the conversion and remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 import { runSequentialTests } from '../test_helpers/run_test';
+
 export function test_expand() {
   runSequentialTests([
     // general cases
@@ -28,27 +22,15 @@ export function test_expand() {
     ['expand(1/(1+1/x))', '1-1/(x+1)'],
     // poles at zero
     ['expand(1/x/(x+1))', '1/x-1/(x+1)'],
-    [
-      'expand(1/x^2/(x+1))',
-      //"x^(-2)-1/x+1/(x+1)",
-      '1/x^2-1/x+1/(x+1)',
-    ],
+    ['expand(1/x^2/(x+1))', '1/x^2-1/x+1/(x+1)'], //"x^(-2)-1/x+1/(x+1)",
     // other corner cases
     ['expand(1/x)', '1/x'],
-    [
-      'expand(1/x^2)',
-      //"x^(-2)",
-      '1/x^2',
-    ],
+    ['expand(1/x^2)', '1/x^2'], //"x^(-2)",
     ['expand(1/(x^2-4x+4))', '1/(x^2-4*x+4)'],
     // cases where nothing can be done
     ['expand(sin(x))', 'sin(x)'],
     ['expand(x)', 'x'],
-    [
-      'expand(1/sin(x))',
-      // unclear why the extra parens are added but no biggie
-      '1/(sin(x))',
-    ],
+    ['expand(1/sin(x))', '1/(sin(x))'], // unclear why the extra parens are added but no biggie
     // note that expand isn't needed to execute the
     // multiplications, expand does something
     // different.

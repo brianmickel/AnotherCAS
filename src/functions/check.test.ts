@@ -32,5 +32,4 @@ export function test_check() {
     ['check([a,2])', 'check([a,2])'],
     ['check(1-i)', '1'],
   ]);
-};
 }

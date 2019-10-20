@@ -46,41 +46,18 @@ export function test_simplify() {
       'simplify(-cos(2/5*pi)*(k/a)^(1/5)-i*(k/a)^(1/5)*sin(2/5*pi))',
       '((k/a)^(2/5))^(1/2)/((-1)^(3/5))',
     ],
-    //"simfac(n!/n)-(n-1)!",
-    //"0",
-
-    //"simfac(n/n!)-1/(n-1)!",
-    //"0",
-
-    //"simfac(rationalize((n+k+1)/(n+k+1)!))-1/(n+k)!",
-    //"0",
-
-    //"simfac(condense((n+1)*n!))-(n+1)!",
-    //"0",
-
-    //"simfac(1/((n+1)*n!))-1/(n+1)!",
-    //"0",
-
-    //"simfac((n+1)!/n!)-n-1",
-    //"0",
-
-    //"simfac(n!/(n+1)!)-1/(n+1)",
-    //"0",
-
-    //"simfac(binomial(n+1,k)/binomial(n,k))",
-    //"(1+n)/(1-k+n)",
-
-    //"simfac(binomial(n,k)/binomial(n+1,k))",
-    //"(1-k+n)/(1+n)",
-
-    //"F(nn,kk)=kk*binomial(nn,kk)",
-    //"",
-
-    //"simplify(simfac((F(n,k)+F(n,k-1))/F(n+1,k))-n/(n+1))",
-    //"0",
-
-    //"F=quote(F)",
-    //"",
+    // ["simfac(n!/n)-(n-1)!", "0"],
+    // ["simfac(n/n!)-1/(n-1)!", "0"],
+    // ["simfac(rationalize((n+k+1)/(n+k+1)!))-1/(n+k)!", "0"],
+    // ["simfac(condense((n+1)*n!))-(n+1)!", "0"],
+    // ["simfac(1/((n+1)*n!))-1/(n+1)!", "0"],
+    // ["simfac((n+1)!/n!)-n-1", "0"],
+    // ["simfac(n!/(n+1)!)-1/(n+1)", "0"],
+    // ["simfac(binomial(n+1,k)/binomial(n,k))", "(1+n)/(1-k+n)"],
+    // ["simfac(binomial(n,k)/binomial(n+1,k))", "(1-k+n)/(1+n)"],
+    // ["F(nn,kk)=kk*binomial(nn,kk)", ""],
+    // ["simplify(simfac((F(n,k)+F(n,k-1))/F(n+1,k))-n/(n+1))", "0"],
+    // ["F=quote(F)", ""],
     ['simplify(n!/n)-(n-1)!', '0'],
     ['simplify(n/n!)-1/(n-1)!', '0'],
     ['simplify(rationalize((n+k+1)/(n+k+1)!))-1/(n+k)!', '0'],
@@ -135,16 +112,8 @@ export function test_simplify() {
     // scrambling the order of things a little
     // and checking whether the nested radical
     // still gets simplified.
-    [
-      'simplify((((-3)^(1/2) + 1)/2)^(1/2))',
-      //"(-1)^(1/6)",
-      '1/2*(i+3^(1/2))',
-    ],
-    [
-      'simplify((1/2 + (-3)^(1/2)/2)^(1/2))',
-      //"(-1)^(1/6)",
-      '1/2*(i+3^(1/2))',
-    ],
+    ['simplify((((-3)^(1/2) + 1)/2)^(1/2))', '1/2*(i+3^(1/2))'], //"(-1)^(1/6)",
+    ['simplify((1/2 + (-3)^(1/2)/2)^(1/2))', '1/2*(i+3^(1/2))'], //"(-1)^(1/6)",
     // no possible de-nesting, should
     // leave unchanged.
     ['simplify((2 +2^(1/2))^(1/2))', '(2+2^(1/2))^(1/2)'],
@@ -156,11 +125,7 @@ export function test_simplify() {
     ['simplify((5 +24^(1/2))^(1/2))', '2^(1/2)+3^(1/2)'],
     ['simplify((3 +4*i)^(1/2))', '2+i'],
     ['simplify((3 -4*i)^(1/2))', '2-i'],
-    [
-      'simplify((-2 +2*3^(1/2)*i)^(1/2))',
-      //"2*(-1)^(1/3)",
-      '1+i*3^(1/2)',
-    ],
+    ['simplify((-2 +2*3^(1/2)*i)^(1/2))', '1+i*3^(1/2)'], //"2*(-1)^(1/3)",
     ['simplify((9 - 4*5^(1/2))^(1/2))', '-2+5^(1/2)'],
     ['simplify((61 - 24*5^(1/2))^(1/2))', '-4+3*5^(1/2)'],
     ['simplify((-352+936*(-1)^(1/2))^(1/3))', '2*(4+3*i)'],
@@ -196,13 +161,8 @@ export function test_simplify() {
       // this one simplifies to any of these two, these are all the same:
       '(1-i)/(2^(1/2))',
     ],
-    //    -(-1)^(3/4)
-    //"-(-1)^(3/4)",
-    [
-      '(-1)^(-5/a)',
-      //"(-1)^(-5/a)",
-      '1/(-1)^(5/a)',
-    ],
+    // [    -(-1)^(3/4), "-(-1)^(3/4)"],
+    ['(-1)^(-5/a)', '1/(-1)^(5/a)'], //"(-1)^(-5/a)",
     // -----------------------
     ['simplify((-1)^(-5))', '-1'],
     ['simplify((-1)^(5))', '-1'],
@@ -213,11 +173,7 @@ export function test_simplify() {
     // it's not the case: the 1/... inversion
     // is just done at the print level for
     // legibility
-    [
-      'simplify((-1)^(-5/a))',
-      //"(-1)^(-5/a)",
-      '1/(-1)^(5/a)',
-    ],
+    ['simplify((-1)^(-5/a))', '1/(-1)^(5/a)'], //"(-1)^(-5/a)",
     ['simplify((-1)^(5/a))', '(-1)^(5/a)'],
     ['simplify((1)^(-5/a))', '1'],
     ['simplify((1)^(5/a))', '1'],
@@ -233,18 +189,14 @@ export function test_simplify() {
     [
       'simplify(i*2^(1/4)*sin(1/8*pi)+2^(1/4)*cos(1/8*pi))',
       '(-1)^(1/8)*2^(1/4)',
-    ], // the circexp of the above is
+    ],
+    // the circexp of the above is
     // 2^(1/4) exp(1/8 i pi), which is less compact
-
     // seems here that the simplification
     // has more nodes than the result but
     // it's not the case: the 1/... inversion
     // is just done at the print level for
-    [
-      'simplify((-1)^(-6/a))',
-      //"(-1)^(-6/a)",
-      '1/(-1)^(6/a)',
-    ],
+    ['simplify((-1)^(-6/a))', '1/(-1)^(6/a)'], //"(-1)^(-6/a)",
     ['simplify((-1)^(6/a))', '(-1)^(6/a)'],
     ['simplify((1)^(-6/a))', '1'],
     ['simplify((1)^(6/a))', '1'],

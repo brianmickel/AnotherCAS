@@ -122,13 +122,10 @@ export function test_factorpoly() {
     ['(-a*x-b)*(-c*x-d)-(b+a*x)*(d+c*x)', '0'],
     // this used to cause divide by zero
     // fixed by calling ispolyexpandedform before calling coeff
-    //  "factor(1/x+1)",
-    //  "(1+x)/x",
+    //  ["factor(1/x+1)", "(1+x)/x"],
     // see if poly gets rationalized
-    //  "(x+1)(x+2)(x+3)/x^3",
-    //  "1+6/(x^3)+11/(x^2)+6/x",
-    //  "factor(last)",
-    //  "(1+x)*(2+x)*(3+x)/(x^3)",
+    //  ["(x+1)(x+2)(x+3)/x^3", "1+6/(x^3)+11/(x^2)+6/x"],
+    //  ["factor(last)", "(1+x)*(2+x)*(3+x)/(x^3)"],
     // this used to fail
     ['factor(x,x)', 'x'],
     ['factor(x^2,x)', 'x^2'],

@@ -1,4 +1,7 @@
-import { runSequentialTests } from '../test_helpers/run_test';
+import {
+  runSequentialTests,
+  runIndividualTests,
+} from '../test_helpers/run_test';
 
 export function test_pattern() {
   runSequentialTests([
@@ -10,9 +13,7 @@ export function test_pattern() {
       'pattern(dot(a_,transpose(a_)), cov(a_))',
       'dot(a_,transpose(a_))->cov(a_)',
     ],
-    //"pattern(cov(transpose(a_)), cov(a_))",
-    //"",
-
+    // ["pattern(cov(transpose(a_)), cov(a_))", ""],
     [
       'simplify(1 + eig(dot(transpose(A+B),B+transpose(transpose(A)))))',
       '1+eig(cov(A+B))',
@@ -23,7 +24,6 @@ export function test_pattern() {
     ],
     // ideally this but we need to make simplifications work better
     // "1+eig(cov(A*x))",
-
     [
       'simplify(1 + eig(dot(x*transpose(transpose(A)), transpose(A*x))))',
       '1+eig(cov(transpose(A)*transpose(x)))',
@@ -34,20 +34,19 @@ export function test_pattern() {
     ],
     // ideally this but we need to make simplifications work better
     // "1+eig(cov(A*x))",
-
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runSequentialTests([
+    // ------------------------------------------------------------------
     ['simplify(integral(1/(X-A)/sqrt(X^2-A^2),X)+sqrt(X^2-A^2)/A/(X-A))', '0'],
     // ------------------------------------------------------------------
-
     [
       'pattern(dot(transpose(a_),a_), cov(a_))',
       'dot(transpose(a_),a_)->cov(a_)',
     ],
     ['simplify(integral(1/(X-A)/sqrt(X^2-A^2),X)+sqrt(X^2-A^2)/A/(X-A))', '0'],
     // ------------------------------------------------------------------
-
     [
       'simplify(eig(dot(transpose(A+B),B+transpose(transpose(A)))))',
       'eig(cov(A+B))',
@@ -61,7 +60,6 @@ export function test_pattern() {
       'eig(cov(transpose(A)*transpose(x)))',
     ],
     // ------------------------------------------------------------------
-
     [
       'pattern(dot(a_,transpose(a_)), cov(a_))',
       'dot(a_,transpose(a_))->cov(a_)',
@@ -79,14 +77,14 @@ export function test_pattern() {
       'eig(cov(transpose(A)*transpose(x)))',
     ],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runSequentialTests([
     [
       'simplify(eig(dot(transpose(A+B),B+transpose(transpose(A)))))',
       'eig(inner(transpose(A),A)+inner(transpose(A),B)+inner(transpose(B),A)+inner(transpose(B),B))',
     ],
     // ------------------------------------------------------------------
-
     [
       'pattern(dot(transpose(a_),a_), cov(a_), not(number(a_)))',
       'dot(transpose(a_),a_)->cov(a_)',
@@ -102,16 +100,18 @@ export function test_pattern() {
       'eig(cov(-x))',
     ],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runSequentialTests([
     [
       'pattern(something(a_,b_),b_*somethingElse(a_))',
       'something(a_,b_)->b_*somethingElse(a_)',
     ],
     ['simplify(something(x,y))', 'somethingElse(x)*y'],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runSequentialTests([
     [
       'pattern(something(a_,b_),b_*somethingElse(a_))',
       'something(a_,b_)->b_*somethingElse(a_)',
@@ -119,8 +119,9 @@ export function test_pattern() {
     ['indirection(h,k) = something(h,k)', ''],
     ['simplify(indirection(x,y))', 'somethingElse(x)*y'],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runSequentialTests([
     [
       'pattern(dot(a_,transpose(a_)), cov(a_))',
       'dot(a_,transpose(a_))->cov(a_)',
@@ -135,8 +136,9 @@ export function test_pattern() {
       '1+eig(inner(transpose(A),A)+inner(transpose(A),B)+inner(transpose(B),A)+inner(transpose(B),B))',
     ],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runSequentialTests([
     [
       'pattern(dot(transpose(a_),a_), cov(a_))',
       'dot(transpose(a_),a_)->cov(a_)',
@@ -154,32 +156,36 @@ export function test_pattern() {
       '1+eig(cov(transpose(b(2))))',
     ],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runSequentialTests([
     ['pattern(a_ + b_, dot(cov(b_),cov(a_)))', 'a_+b_->dot(cov(b_),cov(a_))'],
     [
       'simplify(something + somethingelse)',
       'inner(cov(somethingelse),cov(something))',
     ],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runSequentialTests([
     [
       'pattern(aFunction(a_), anotherFunction(a_))',
       'aFunction(a_)->anotherFunction(a_)',
     ],
     ['simplify(aFunction(someArg))', 'anotherFunction(someArg)'],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runSequentialTests([
     [
       'pattern(aFunction(a_), anotherFunction(a_))',
       'aFunction(a_)->anotherFunction(a_)',
     ],
     ['simplify(1 + aFunction(someArg))', '1+anotherFunction(someArg)'],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runSequentialTests([
     [
       'pattern(aFunction(a_), anotherFunction(a_))',
       'aFunction(a_)->anotherFunction(a_)',
@@ -189,8 +195,9 @@ export function test_pattern() {
       'anotherFunction(someArg)+anotherFunction(someOtherArg)',
     ],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runSequentialTests([
     [
       'pattern(aFunction(a_), anotherFunction(a_))',
       'aFunction(a_)->anotherFunction(a_)',
@@ -200,8 +207,9 @@ export function test_pattern() {
       'a+b+anotherFunction(someArg)+anotherFunction(someOtherArg)',
     ],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runSequentialTests([
     [
       'pattern(aFunction(a_), anotherFunction(a_))',
       'aFunction(a_)->anotherFunction(a_)',
@@ -211,8 +219,9 @@ export function test_pattern() {
       'anotherFunction(anotherFunction(someOtherArg))',
     ],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runSequentialTests([
     [
       'pattern(aFunction(a_), anotherFunction(a_))',
       'aFunction(a_)->anotherFunction(a_)',
@@ -226,8 +235,9 @@ export function test_pattern() {
       'anotherFunctionBBBB(anotherFunctionBBBB(someOtherArg))',
     ],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runSequentialTests([
     [
       'pattern(aFunction(a_), anotherFunctionBBBB(a_))',
       'aFunction(a_)->anotherFunctionBBBB(a_)',
@@ -241,8 +251,9 @@ export function test_pattern() {
       'anotherFunction(anotherFunction(someOtherArg))',
     ],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runSequentialTests([
     [
       'pattern(aFunction(a_), anotherFunction(a_))',
       'aFunction(a_)->anotherFunction(a_)',
@@ -256,10 +267,11 @@ export function test_pattern() {
       'YETanotherFunction(YETanotherFunction(someOtherArg))',
     ],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
+
+  runSequentialTests([
     // this one tests if multiple rounds of ruleS applications are
     // done while there are still trasformations succeeding.
-
     [
       'pattern(anotherFunction(a_), YETanotherFunction(a_))',
       'anotherFunction(a_)->YETanotherFunction(a_)',
@@ -273,7 +285,9 @@ export function test_pattern() {
       'YETanotherFunction(YETanotherFunction(someOtherArg))',
     ],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
+
+  runSequentialTests([
     // you can use transformation rules to calculate factorials
     // you shouldn't, but you can
 
@@ -286,8 +300,9 @@ export function test_pattern() {
     ],
     ['simplify(fact(3))', '6'],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runSequentialTests([
     ['pattern(f(a_,b_),f(b_,a_))', 'f(a_,b_)->f(b_,a_)'],
     // TODO would be nice to print out the constraints
     // as well.
@@ -296,14 +311,18 @@ export function test_pattern() {
       'Stop: maximum application of single transformation rule exceeded: f(a_,b_)(f(b_,a_))',
     ],
     ['clearpatterns()', ''],
+  ]);
+
+  runSequentialTests([
     // overwriting a pattern ---------------------------------------------
 
     ['pattern(a_ + a_ ,42 * a_)', 'a_+a_->42*a_'],
     ['pattern(a_ + a_ ,21 * a_)', 'a_+a_->21*a_'],
     ['simplify(x+x)', '21*x'],
     ['clearpatterns()', ''],
-    // ------------------------------------------------------------------
+  ]);
 
+  runIndividualTests([
     [
       'pattern(f(a_,b_))',
       'Stop: pattern needs at least a template and a transformed version',

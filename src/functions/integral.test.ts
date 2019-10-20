@@ -1,5 +1,4 @@
 import { runSequentialTests } from '../test_helpers/run_test';
-
 export function test_integral() {
   runSequentialTests([
     ['clearall', ''],
@@ -108,18 +107,14 @@ export function test_integral() {
     // when doing multiplications. The two things combined made me
     // think to eliminate this test.
     //77
-    //"integral(1/(2+3*X^4),X)-1/2*1/2*(2/3/4)^(1/4)*(1/2*log((X^2+2*(2/3/4)^(1/4)*X+2*(2/3/4)^(1/2))/(X^2-2*(2/3/4)^(1/4)*X+2*(2/3/4)^(1/2)))+arctan(2*(2/3/4)^(1/4)*X/(2*(2/3/4)^(1/2)-X^2)))",
-    //"0",
-
+    // ["integral(1/(2+3*X^4),X)-1/2*1/2*(2/3/4)^(1/4)*(1/2*log((X^2+2*(2/3/4)^(1/4)*X+2*(2/3/4)^(1/2))/(X^2-2*(2/3/4)^(1/4)*X+2*(2/3/4)^(1/2)))+arctan(2*(2/3/4)^(1/4)*X/(2*(2/3/4)^(1/2)-X^2)))", "0"],
     // commenting this out because the definite integral of this one
     // between 0 and pi was incorrect AND the indefinite integral
     // became incorrect after I avoided having roots in the denominator
     // when doing multiplications. The two things combined made me
     // think to eliminate this test.
     //78
-    //"integral(1/(2-3*X^4),X)-1/2*(2/3)^(1/4)/2*(1/2*log((X+(2/3)^(1/4))/(X-(2/3)^(1/4)))+arctan(X*(2/3)^(-1/4)))",
-    //"0",
-
+    // ["integral(1/(2-3*X^4),X)-1/2*(2/3)^(1/4)/2*(1/2*log((X+(2/3)^(1/4))/(X-(2/3)^(1/4)))+arctan(X*(2/3)^(-1/4)))", "0"],
     //79
     ['integral(X/(2+3*X^4),X)-1/2*1/3*1/sqrt(2/3)*arctan(X^2/sqrt(2/3))', '0'],
     //80
@@ -133,18 +128,14 @@ export function test_integral() {
     // when doing multiplications. The two things combined made me
     // think to eliminate this test.
     //81
-    //"integral(X^2/(2+3*X^4),X)-1/4*1/3*(2/3/4)^(-1/4)*(1/2*log((X^2-2*(2/3/4)^(1/4)*X+2*sqrt(2/3/4))/(X^2+2*(2/3/4)^(1/4)*X+2*sqrt(2/3/4)))+arctan(2*(2/3/4)^(1/4)*X/(2*sqrt(2/3/4)-X^2)))",
-    //"0",
-
+    // ["integral(X^2/(2+3*X^4),X)-1/4*1/3*(2/3/4)^(-1/4)*(1/2*log((X^2-2*(2/3/4)^(1/4)*X+2*sqrt(2/3/4))/(X^2+2*(2/3/4)^(1/4)*X+2*sqrt(2/3/4)))+arctan(2*(2/3/4)^(1/4)*X/(2*sqrt(2/3/4)-X^2)))", "0"],
     // commenting this out because the definite integral of this one
     // between 0 and pi was incorrect AND the indefinite integral
     // became incorrect after I avoided having roots in the denominator
     // when doing multiplications. The two things combined made me
     // think to eliminate this test.
     //82
-    //"integral(X^2/(2-3*X^4),X)+1/4*1/3*(2/3)^(-1/4)*(log((X-(2/3)^(1/4))/(X+(2/3)^(1/4)))+2*arctan(X*(2/3)^(-1/4)))",
-    //"0",
-
+    // ["integral(X^2/(2-3*X^4),X)+1/4*1/3*(2/3)^(-1/4)*(log((X-(2/3)^(1/4))/(X+(2/3)^(1/4)))+2*arctan(X*(2/3)^(-1/4)))", "0"],
     //83
     ['integral(X^3/(A+B*X^4),X)-1/4*1/B*log(A+B*X^4)', '0'],
     //124
@@ -210,24 +201,14 @@ export function test_integral() {
     //163
     ['integral(X*sqrt(X^2+A),X)-1/3*sqrt((X^2+A)^3)', '0'],
     //164 fails after Jan 2017 changes to abs/mag
-    //"integral(sqrt((X^2+A)^3),X)-1/4*(X*sqrt((X^2+A)^3)+3/2*A*X*sqrt(X^2+A)+3/2*A^2*log(X+sqrt(X^2+A)))",
-    //"0",
-
-    //"integral(sqrt((X^2-A)^3),X)-1/4*(X*sqrt((X^2-A)^3)-3/2*A*X*sqrt(X^2-A)+3/2*A^2*log(X+sqrt(X^2-A)))",
-    //"0",
-
+    // ["integral(sqrt((X^2+A)^3),X)-1/4*(X*sqrt((X^2+A)^3)+3/2*A*X*sqrt(X^2+A)+3/2*A^2*log(X+sqrt(X^2+A)))", "0"],
+    // ["integral(sqrt((X^2-A)^3),X)-1/4*(X*sqrt((X^2-A)^3)-3/2*A*X*sqrt(X^2-A)+3/2*A^2*log(X+sqrt(X^2-A)))", "0"],
     //165 fails after Jan 2017 changes to abs/mag
-    //"integral(1/sqrt((X^2+A)^3),X)-X/A/sqrt(X^2+A)",
-    //"0",
-
+    // ["integral(1/sqrt((X^2+A)^3),X)-X/A/sqrt(X^2+A)", "0"],
     //166 fails after Jan 2017 changes to abs/mag
-    //"integral(X/sqrt((X^2+A)^3),X)+1/sqrt(X^2+A)",
-    //"0",
-
+    // ["integral(X/sqrt((X^2+A)^3),X)+1/sqrt(X^2+A)", "0"],
     //167 fails after Jan 2017 changes to abs/mag
-    //"integral(X*sqrt((X^2+A)^3),X)-1/5*sqrt((X^2+A)^5)",
-    //"0",
-
+    // ["integral(X*sqrt((X^2+A)^3),X)-1/5*sqrt((X^2+A)^5)", "0"],
     //168
     [
       'integral(X^2*sqrt(X^2+A),X)-1/4*X*sqrt((X^2+A)^3)+1/8*A*X*sqrt(X^2+A)+1/8*A^2*log(X+sqrt(X^2+A))',
@@ -268,7 +249,6 @@ export function test_integral() {
 +1/16*(2^6)*log(X+sqrt(X^2+2^2))`,
       '0',
     ],
-
     //176-
     [
       `integral(X^2*sqrt((X^2-2^2)^3),X)\
@@ -278,7 +258,6 @@ export function test_integral() {
 -1/16*(2^6)*log(X+sqrt(X^2-2^2))`,
       '0',
     ],
-
     //177+
     [
       `integral(X^3*sqrt((X^2+7^2)^3),X)\
@@ -286,7 +265,6 @@ export function test_integral() {
 +1/5*(7^2)*sqrt((X^2+7^2)^5)`,
       '0',
     ],
-
     //177-
     [
       `integral(X^3*sqrt((X^2-7^2)^3),X)\
@@ -294,7 +272,6 @@ export function test_integral() {
 -1/5*(7^2)*sqrt((X^2-7^2)^5)`,
       '0',
     ],
-
     //196
     ['simplify(integral(1/(X-A)/sqrt(X^2-A^2),X)+sqrt(X^2-A^2)/A/(X-A))', '0'],
     [
@@ -322,21 +299,18 @@ export function test_integral() {
 -sqrt(7-X^2)+sqrt(7)*log((sqrt(7)+sqrt(7-X^2))/X)`,
       '0',
     ],
-
     //204
     [
       `integral(X/sqrt(A-X^2),X)\
 +sqrt(A-X^2)`,
       '0',
     ],
-
     //205
     [
       `integral(X*sqrt(A-X^2),X)\
 +1/3*sqrt((A-X^2)^3)`,
       '0',
     ],
-
     //210
     [
       `integral(X^2*sqrt(7-X^2),X)\
@@ -344,14 +318,12 @@ export function test_integral() {
 -7/8*(X*sqrt(7-X^2)+7*arcsin(X/sqrt(7)))`,
       '0',
     ],
-
     //211
     [
       `integral(X^3*sqrt(7-X^2),X)\
 -(-1/5*X^2-2/15*7)*sqrt((7-X^2)^3)`,
       '0',
     ],
-
     //214
     [
       `integral(X^2/sqrt(7-X^2),X)\
@@ -359,14 +331,12 @@ export function test_integral() {
 -7/2*arcsin(X/sqrt(7))`,
       '0',
     ],
-
     //215
     [
       `integral(1/X^2*1/sqrt(7-X^2),X)\
 +sqrt(7-X^2)/7/X`,
       '0',
     ],
-
     //216
     [
       `integral(sqrt(7-X^2)/X^2,X)\
@@ -374,7 +344,6 @@ export function test_integral() {
 +arcsin(X/sqrt(7))`,
       '0',
     ],
-
     //217
     [
       `integral(sqrt(7-X^2)/X^3,X)\
@@ -382,14 +351,12 @@ export function test_integral() {
 -1/2*log((sqrt(7)+sqrt(7-X^2))/X)/sqrt(7)`,
       '0',
     ],
-
     //218
     [
       `integral(sqrt(7-X^2)/X^4,X)\
 +1/3*sqrt((7-X^2)^3)/7/X^3`,
       '0',
     ],
-
     //273
     [
       'integral(sqrt(7*X^2+C),X)-X*sqrt(7*X^2+C)/2-C*log(X*sqrt(7)+sqrt(7*X^2+C))/2/sqrt(7)',
@@ -524,7 +491,6 @@ export function test_integral() {
     //572
     ['integral(cosh(X)^2,X)-sinh(2*X)/4-X/2', '0'],
     // test integral(exp(a*x^2))
-
     ['integral(exp(a*x^2))+i*sqrt(pi)*erf(i*sqrt(a)*x)/sqrt(a)/2', '0'],
     ['integral(exp(-x^2))-sqrt(pi)*erf(x)/2', '0'],
     // before abs/mag changes of Jan 2017
