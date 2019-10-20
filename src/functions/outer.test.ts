@@ -18,5 +18,5 @@ export function test_outer() {
     ['H4455=outer(H44,H55)', ''],
     ['H33444455=outer(H33,H44,H44,H55)', ''],
     ['simplify(inner(H3344,H4455)-contract(H33444455,4,5))', '0'],
-  ]);
+  ]); // fails timeout
 }

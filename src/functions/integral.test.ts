@@ -1,8 +1,12 @@
-import { runSequentialTests } from '../test_helpers/run_test';
+import {
+  runSequentialTests,
+  runIndividualTests,
+} from '../test_helpers/run_test';
+
 export function test_integral() {
-  runSequentialTests([
-    ['clearall', ''],
-    ['tty=1', ''],
+  runIndividualTests([
+    // ['clearall', ''],
+    // ['tty=1', ''], What does this do?
     ['integral(x^2+x)-(1/2*x^2+1/3*x^3)', '0'],
     //1
     ['integral(A,X)', 'A*X'],
@@ -500,32 +504,56 @@ export function test_integral() {
     ['integral(exp(-3*x^2))-pi^(1/2)*erf(3^(1/2)*x)/(2*3^(1/2))', '0'],
     ['integral(1/x*1/(a+log(x)),x)-log(a+log(x))', '0'],
     ['integral(exp(a*x+b*x))', 'exp((a+b)*x)/(a+b)'],
+  ]);
+
+  runSequentialTests([
     ['integral(x*exp(a*x))', '-exp(a*x)/(a^2)+x*exp(a*x)/a'],
     ['derivative', 'x*exp(a*x)'],
+  ]);
+
+  runSequentialTests([
     ['integral(x*exp(a*x+b))', '-exp(a*x+b)/(a^2)+x*exp(a*x+b)/a'],
     ['derivative', 'x*exp(a*x+b)'],
+  ]);
+
+  runSequentialTests([
     ['integral(x*exp(-a*x+b))', '-exp(-a*x+b)/(a^2)-x*exp(-a*x+b)/a'],
     ['derivative', 'x*exp(-a*x+b)'],
+  ]);
+
+  runSequentialTests([
     [
       'integral(x^2*exp(a*x))',
       '2*exp(a*x)/(a^3)-2*x*exp(a*x)/(a^2)+x^2*exp(a*x)/a',
     ],
     ['derivative', 'x^2*exp(a*x)'],
+  ]);
+
+  runSequentialTests([
     [
       'integral(x^2*exp(a*x+b))',
       '2*exp(a*x+b)/(a^3)-2*x*exp(a*x+b)/(a^2)+x^2*exp(a*x+b)/a',
     ],
     ['derivative', 'x^2*exp(a*x+b)'],
+  ]);
+
+  runSequentialTests([
     [
       'integral(x^3*exp(a*x))',
       '-6*exp(a*x)/(a^4)+6*x*exp(a*x)/(a^3)-3*x^2*exp(a*x)/(a^2)+x^3*exp(a*x)/a',
     ],
     ['derivative', 'x^3*exp(a*x)'],
+  ]);
+
+  runSequentialTests([
     [
       'integral(x^3*exp(a*x+b))',
       '-6*exp(a*x+b)/(a^4)+6*x*exp(a*x+b)/(a^3)-3*x^2*exp(a*x+b)/(a^2)+x^3*exp(a*x+b)/a',
     ],
     ['derivative', 'x^3*exp(a*x+b)'],
+  ]);
+
+  runIndividualTests([
     // here
     [
       'integral(sqrt(a*x^2+b))',

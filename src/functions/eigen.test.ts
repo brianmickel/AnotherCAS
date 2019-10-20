@@ -1,7 +1,10 @@
-import { runSequentialTests } from '../test_helpers/run_test';
+import {
+  runSequentialTests,
+  runIndividualTests,
+} from '../test_helpers/run_test';
 
 export function test_eigen() {
-  runSequentialTests([
+  runIndividualTests([
     ['eigen(A)', 'Stop: eigen: argument is not a square matrix'],
     ['eigenval(A)', 'eigenval(A)'],
     ['eigenvec(A)', 'eigenvec(A)'],
@@ -28,6 +31,9 @@ export function test_eigen() {
       'abs(contract(hilbert(20))-contract(dot(transpose(Q),D,Q)))',
       '0.000000...',
     ],
+  ]);
+
+  runSequentialTests([
     ['D=quote(D)', ''],
     ['Q=quote(Q)', ''],
     ['A=hilbert(3)', ''],

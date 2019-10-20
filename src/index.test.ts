@@ -103,6 +103,7 @@ function testPassing() {
   test_hermite();
   test_imag();
   test_index();
+  test_integral();
   test_isprime();
   test_laguerre();
   test_lcm();
@@ -110,6 +111,7 @@ function testPassing() {
   test_log();
   test_mod();
   test_multiply();
+  test_nroots();
   test_numerator();
   test_polar();
   test_power();
@@ -136,8 +138,6 @@ export function testNotYetPassing() {
   test_eigen();
   test_factor_number(); // long
   test_gcd();
-  test_integral();
-  test_nroots();
   test_outer();
   test_pattern();
   test_quickfactor();
