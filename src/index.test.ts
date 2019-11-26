@@ -67,7 +67,7 @@ import { test_tensor } from './functions/tensor.test';
 import { test_transpose } from './functions/transpose.test';
 import { test_zero } from './functions/zero.test';
 
-import { testLowLevel } from './low_level/low_level.test';
+//import { testLowLevel } from './low_level/low_level.test';
 import { testTrig } from './functions/trig/trig.test';
 
 function testPassing() {
@@ -130,11 +130,11 @@ function testPassing() {
   test_tensor();
   test_transpose();
   test_zero();
+  mini_test();
 }
-
+/*
 export function testNotYetPassing() {
   testLowLevel();
-  mini_test();
   test_eigen();
   test_factor_number(); // long
   test_gcd();
@@ -144,7 +144,9 @@ export function testNotYetPassing() {
   test_roots();
   test_simplify();
 }
+*/
 
 testTrig();
 testPassing();
+
 // testNotYetPassing();
