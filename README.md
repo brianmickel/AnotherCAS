@@ -1,4 +1,4 @@
-# AlphaCAS
+# AnotherCAS
 
 Another computer algebra system. Started from Algebrite v1.3.0. Right now the goal is to make progress on the test library.
 
