@@ -20,7 +20,7 @@
     "ts-node": "^8.5.2",
     "typescript": "^3.7.2",
     "webpack": "^4.35.0",
-    "webpack-cli": "^3.3.4"
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "big-integer": "^1.6.47"
