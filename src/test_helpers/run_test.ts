@@ -1,5 +1,5 @@
 /// <reference types="vitest/globals" />
-const algebrite = require('../index');
+import * as algebrite from '../index';
 
 let _groupCounter = 0;
 

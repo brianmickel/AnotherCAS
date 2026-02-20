@@ -1,4 +1,4 @@
-const algebrite = require('../index');
+import * as algebrite from '../index';
 import { test_inner } from '../functions/inner.test';
 import { test_inv } from '../functions/inv.test';
 import { test_mixedprint } from '../functions/mixedprint.test';

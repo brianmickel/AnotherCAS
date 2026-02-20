@@ -2,9 +2,12 @@
   "name": "AnotherCAS",
   "version": "0.1.0",
   "description": "Another computer algebra system.",
+  "type": "module",
   "scripts": {
     "build": "tsup",
-    "test": "vitest run"
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src"
   },
   "author": "Brian Mickel",
   "license": "MIT",
