@@ -34,10 +34,6 @@ export function test_transpose() {
       'transpose(transpose(transpose(a),3,4))',
       'transpose(transpose(transpose(a),3,4))',
     ],
-    [
-      'transpose(transpose(transpose(a),3,4))',
-      'transpose(transpose(transpose(a),3,4))',
-    ],
     ['transpose(transpose(transpose(a),1,2))', 'transpose(a)'],
     ['transpose(transpose(transpose(a),2,1))', 'transpose(a)'],
     ['transpose(transpose(a,3,4),4,3)', 'a'],

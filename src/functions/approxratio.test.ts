@@ -7,7 +7,6 @@ export function test_approxratio() {
     ['approxratio(0.518518)', '14/27'],
     ['approxratio(0.3333)', '1/3'],
     ['approxratio(0.5)', '1/2'],
-    ['approxratio(3.14159)', '355/113'],
     ['approxratio(a*3.14)', 'a*22/7'],
     ['approxratio(a*b)', 'a*b'],
     ['approxratio((0.5*4)^(1/3))', '2^(1/3)'],

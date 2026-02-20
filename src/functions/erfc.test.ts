@@ -5,7 +5,6 @@ export function test_erfc() {
     ['erfc(a)', 'erfc(a)'],
     ['erfc(0.0)', '1.0'],
     ['float(erfc(0))', '1.0'],
-    ['erfc(0.0)', '1.0'],
     ['erfc(-0.0)', '1.0'],
     ['erfc(0)', '1'],
     ['erfc(-0)', '1'],

@@ -1,36 +1,45 @@
+/// <reference types="jasmine" />
 const algebrite = require('../index');
 
+let _groupCounter = 0;
+
 export function runIndividualTests(testcases: [string, string][]): void {
-  testcases.forEach(([input, expected]) => {
-    algebrite.run('clearall');
-    it(`${input} should return "${expected}"`, () => {
-      let result: any;
-      try {
-        result = algebrite.run(input);
-      } catch (error) {
-        console.log(error);
-        algebrite.init();
-      }
-      expect(result).toBe(expected);
+  const groupId = ++_groupCounter;
+  describe(`test group ${groupId}: ${testcases[0][0]}`, () => {
+    testcases.forEach(([input, expected]) => {
+      algebrite.run('clearall');
+      it(`${input} should return "${expected}"`, () => {
+        let result: any;
+        try {
+          result = algebrite.run(input);
+        } catch (error) {
+          console.log(error);
+          algebrite.init();
+        }
+        expect(result).toBe(expected);
+      });
+      algebrite.run('clearall');
     });
-    algebrite.run('clearall');
   });
 }
 
 export function runSequentialTests(testcases: [string, string][]): void {
-  it(`runSequentialTests testing ${testcases[0]}`, () => {
-    algebrite.init();
-    testcases.forEach(([input, expected]) => {
-      let result: any;
-      try {
-        result = algebrite.run(input);
-      } catch (error) {
-        console.log(error);
-        algebrite.init();
-      }
-      expect(result).toBe(expected);
+  const groupId = ++_groupCounter;
+  describe(`sequential group ${groupId}: ${testcases[0][0]}`, () => {
+    it(`runSequentialTests testing ${testcases[0]}`, () => {
+      algebrite.init();
+      testcases.forEach(([input, expected]) => {
+        let result: any;
+        try {
+          result = algebrite.run(input);
+        } catch (error) {
+          console.log(error);
+          algebrite.init();
+        }
+        expect(result).toBe(expected);
+      });
+      algebrite.run('clearall');
     });
-    algebrite.run('clearall');
   });
 }
 
@@ -47,19 +56,22 @@ function unzippifyArray(s: string[]): [string, string][] {
 
 export function run_test(s: string[]): void {
   const tests = unzippifyArray(s);
-  it(`run_test testing ${s[0]}`, () => {
-    algebrite.run('clearall');
-    algebrite.run('e=quote(e)');
-    tests.forEach(([input, expected]) => {
-      let result: any;
-      try {
-        result = algebrite.run(input);
-      } catch (error) {
-        console.log(error);
-        algebrite.init();
-      }
-      expect(result).toBe(expected);
+  const groupId = ++_groupCounter;
+  describe(`run_test group ${groupId}: ${s[0]}`, () => {
+    it(`run_test testing ${s[0]}`, () => {
+      algebrite.run('clearall');
+      algebrite.run('e=quote(e)');
+      tests.forEach(([input, expected]) => {
+        let result: any;
+        try {
+          result = algebrite.run(input);
+        } catch (error) {
+          console.log(error);
+          algebrite.init();
+        }
+        expect(result).toBe(expected);
+      });
+      algebrite.run('clearall');
     });
-    algebrite.run('clearall');
   });
 }

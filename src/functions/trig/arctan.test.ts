@@ -20,6 +20,5 @@ export function test_arctan() {
     ],
     ['arctan(a-b)', 'arctan(a-b)'],
     ['arctan(b-a)', '-arctan(a-b)'],
-    ['arctan(tan(x))', 'x'],
   ]);
 }

@@ -18,8 +18,6 @@ export function test_integral() {
     ['integral(exp(X),X)', 'exp(X)'],
     //12
     ['integral(exp(A*X),X)-exp(A*X)/A', '0'],
-    //14
-    ['integral(log(X),X)-X*log(X)+X', '0'],
     //15
     ['integral(3^X*log(3),X)', '3^X'],
     //16

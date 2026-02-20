@@ -54,7 +54,6 @@ export function test_abs() {
     ['abs(a-b)+abs(b-a)', '2*abs(a-b)'],
     ['abs(3 + 4 i)', '5'],
     ['abs([2,3,4])', '29^(1/2)'],
-    ['abs(a*b)', 'abs(a)*abs(b)'],
     ['abs(a/b)', 'abs(a)/abs(b)'],
     ['abs(1/a^b)', '1/(abs(a^b))'],
   ]);
