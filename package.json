@@ -3,25 +3,19 @@
   "version": "0.1.0",
   "description": "Another computer algebra system.",
   "scripts": {
-    "build": "webpack",
-    "test": "tsx node_modules/jasmine/bin/jasmine --config=jasmine.json"
+    "build": "tsup",
+    "test": "vitest run"
   },
   "author": "Brian Mickel",
   "license": "MIT",
   "devDependencies": {
-    "@types/jasmine": "^6.0.0",
     "@types/node": "^25.3.0",
     "@typescript-eslint/eslint-plugin": "^8.56.0",
     "@typescript-eslint/parser": "^8.56.0",
     "eslint": "^9.39.2",
-    "eslint-config-google": "^0.14.0",
-    "jasmine": "^6.0.0",
-    "ts-loader": "^9.5.4",
-    "ts-node": "^10.9.2",
-    "tsx": "^4.21.0",
+    "tsup": "^8.5.1",
     "typescript": "^5.9.3",
-    "webpack": "^5.105.2",
-    "webpack-cli": "^6.0.1"
+    "vitest": "^3.2.4"
   },
   "dependencies": {
     "big-integer": "^1.6.52"

@@ -1,4 +1,4 @@
-/// <reference types="jasmine" />
+/// <reference types="vitest/globals" />
 const algebrite = require('../index');
 
 let _groupCounter = 0;
