@@ -3,6 +3,10 @@ import * as algebrite from '../index';
 
 let _groupCounter = 0;
 
+// Sequential and run_test groups run every case in one test, and the largest groups take
+// ~3s on a throttled CI runner, too close to Vitest's 5s default.
+const SEQUENTIAL_GROUP_TIMEOUT_MS = 30_000;
+
 export function runIndividualTests(testcases: [string, string][]): void {
   const groupId = ++_groupCounter;
   describe(`test group ${groupId}: ${testcases[0][0]}`, () => {
@@ -39,7 +43,7 @@ export function runSequentialTests(testcases: [string, string][]): void {
         expect(result).toBe(expected);
       });
       algebrite.run('clearall');
-    });
+    }, SEQUENTIAL_GROUP_TIMEOUT_MS);
   });
 }
 
@@ -72,6 +76,6 @@ export function run_test(s: string[]): void {
         expect(result).toBe(expected);
       });
       algebrite.run('clearall');
-    });
+    }, SEQUENTIAL_GROUP_TIMEOUT_MS);
   });
 }
