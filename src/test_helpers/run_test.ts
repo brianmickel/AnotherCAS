@@ -9,7 +9,7 @@ export function runIndividualTests(testcases: [string, string][]): void {
     testcases.forEach(([input, expected]) => {
       algebrite.run('clearall');
       it(`${input} should return "${expected}"`, () => {
-        let result: any;
+        let result: string | undefined;
         try {
           result = algebrite.run(input);
         } catch (error) {
@@ -29,7 +29,7 @@ export function runSequentialTests(testcases: [string, string][]): void {
     it(`runSequentialTests testing ${testcases[0]}`, () => {
       algebrite.init();
       testcases.forEach(([input, expected]) => {
-        let result: any;
+        let result: string | undefined;
         try {
           result = algebrite.run(input);
         } catch (error) {
@@ -62,7 +62,7 @@ export function run_test(s: string[]): void {
       algebrite.run('clearall');
       algebrite.run('e=quote(e)');
       tests.forEach(([input, expected]) => {
-        let result: any;
+        let result: string | undefined;
         try {
           result = algebrite.run(input);
         } catch (error) {
