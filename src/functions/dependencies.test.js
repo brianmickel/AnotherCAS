@@ -1,4 +1,3 @@
-// eslint-disable-next-line require-jsdoc
 export function test_dependencies() {
   do_clearall();
 

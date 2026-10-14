@@ -1,4 +1,3 @@
-// eslint-disable-next-line require-jsdoc
 export function test_quickfactor() {
   let i = 0;
   logout('testing quickfactor\n');

@@ -1,4 +1,3 @@
-// eslint-disable-next-line require-jsdoc
 export function test_msub() {
   let asc;
   let i = 0;
@@ -24,7 +23,6 @@ export function test_msub() {
   return logout('ok\n');
 }
 
-// eslint-disable-next-line require-jsdoc
 function test_msubf(na, nb, nc) {
   // unsigned int *a, *b, *c, *d
 

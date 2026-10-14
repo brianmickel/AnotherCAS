@@ -1,4 +1,3 @@
-// eslint-disable-next-line require-jsdoc
 export function test_mgcd() {
   logout('testing mgcd\n');
   for (let i = 1; i < 100; i++) {
@@ -16,7 +15,6 @@ export function test_mgcd() {
 }
 
 // Euclid's algorithm
-// eslint-disable-next-line require-jsdoc
 function egcd(a, b) {
   let sign_ = 0;
   if (MZERO(b)) {

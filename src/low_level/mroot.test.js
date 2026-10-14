@@ -1,4 +1,3 @@
-// eslint-disable-next-line require-jsdoc
 export function test_mroot() {
   let a;
   let b;

@@ -1,4 +1,3 @@
-// eslint-disable-next-line require-jsdoc
 export function test_mmul() {
   let asc;
   let i = 0;
@@ -22,7 +21,6 @@ export function test_mmul() {
   return logout('ok\n');
 }
 
-// eslint-disable-next-line require-jsdoc
 function test_mmulf(na, nb, nc) {
   const a = mint(na);
   const b = mint(nb);

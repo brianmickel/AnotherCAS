@@ -1,4 +1,3 @@
-// eslint-disable-next-line require-jsdoc
 export function test_mprime() {
   let i = 0;
   let k = 0;
